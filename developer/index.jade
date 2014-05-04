@@ -1,0 +1,191 @@
+doctype html
+html(lang="ru")
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge,chrome=1")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(name="author", content="Anton Nemtsev, @silentimp, skype: ravencry")
+    link(rel="stylesheet", href="css/styles.css")
+    script(src="js/requirejs/require.js", data-main="js/poll.js")
+    title СМС вопросник
+  body
+    section.page
+      header
+        menu
+          nav.languages
+            a(href="#", hreflang="ua") Украинский
+            a(href="#", hreflang="ru") Русский
+            a(href="#", hreflang="en") Английский
+            a(href="#", hreflang="de") Немецкий
+            a(href="#", hreflang="fr") Французкий
+            a(href="#", hreflang="es") Испанский
+          nav.versions
+            a(href="#") RSS
+            a(href="#") PDA
+            a(href="#") Facebook
+            a(href="#") Twitter
+            a(href="#") iPhone
+          nav.main
+            a(href="#") О проекте
+            a(href="#") Партнеры
+            a(href="#") Статистика
+            a(href="#") Контакты
+        a(href="#")
+          img.banner(src="images/banners/banner-1.jpg", alt="Banner")
+
+      section.poll.current
+        h2.title Текущий опрос с 1.05.2014 по 7.05.2014 
+        .info
+          img.avatar(src="images/avatars/avatar-1.jpg", alt="Фотография")
+          .details
+            p.role Народный депутат Украины, кандидат в президенты Порошенко Петр Алексеевич задает вопрос Украине:
+            p.question Уважаемые украинцы, считаете ли вы, что Украине крайне необходима новая конституция?
+          nav
+            p.length Время для ответов:
+              time 72 часа
+            p.countdown.countdown-widget Оставшееся время:
+              time(datetime="2014-04-27") 23ч:16м:55с
+        table.vote-block
+          thead
+            tr
+              td
+              td.yes Да
+              td.no Нет
+              td.pass Не готов ответить
+          tfoot
+            tr
+              td
+              td Цена согласно<br> тарифам оператора
+              td Цена согласно<br> тарифам оператора
+              td Цена согласно<br> тарифам оператора
+          tbody
+            tr
+              td 
+                img(src="images/cell-operator/op-1.jpg", alt="МТС")
+              td.yes 
+                span Да: 
+                b Для абонентов МТС: 
+                | Отправьте СМС с цифрой 1 на номер 3398
+              td.no 
+                span Нет: 
+                b Для абонентов МТС: 
+                | Отправьте СМС с цифрой 2 на номер 3398
+              td.pass 
+                span Не готов ответить: 
+                b Для абонентов МТС: 
+                | Отправьте СМС с цифрой 3 на номер 3398
+            tr
+              td 
+                img(src="images/cell-operator/op-2.jpg", alt="Киевстар")
+              td.yes 
+                span Да: 
+                b Для абонентов КИЕВСТАР: 
+                | Отправьте СМС с цифрой 1 на номер 5798
+              td.no 
+                span Нет: 
+                b Для абонентов КИЕВСТАР: 
+                | Отправьте СМС с цифрой 2 на номер 5798
+              td.pass 
+                span Не готов ответить: 
+                b Для абонентов КИЕВСТАР: 
+                | Отправьте СМС с цифрой 3 на номер 5798
+            tr
+              td 
+                img(src="images/cell-operator/op-3.jpg", alt="Life:)")
+              td.yes 
+                span Да: 
+                b Для абонентов LIFE: 
+                | Отправьте СМС с цифрой 1 на номер 5458
+              td.no 
+                span Нет: 
+                b Для абонентов LIFE: 
+                | Отправьте СМС с цифрой 2 на номер 5458
+              td.pass 
+                span Не готов ответить: 
+                b Для абонентов LIFE: 
+                | Отправьте СМС с цифрой 3 на номер 5458
+
+      .graph-container-wrapper
+        ul.graph-container
+          li
+            span Да
+            div.bar-wrapper
+              div.bar-container
+                div.bar-inner(style="height:50%;") 25
+          li
+            span Нет
+            div.bar-wrapper
+              div.bar-container
+                div.bar-inner(style="height:35%;") 35
+          li
+            span Не готов ответить
+            div.bar-wrapper
+              div.bar-container
+                div.bar-inner(style="height:15%;") 15
+          li
+            ul.graph-marker-container
+              li(style='bottom:12.5%;')
+              li(style='bottom:25%;')
+                span 25%
+              li(style='bottom:37.5%;')
+              li(style='bottom:50%;')
+                span 50%
+              li(style='bottom:62.5%;')
+              li(style='bottom:75%;')
+                span 75%
+              li(style='bottom:87.5%;')
+              li(style='bottom:100%;')
+                span 100%
+
+
+
+      section.poll
+        h2.title Следующий опрос: с 8.05.2014 по 12.05.2014 
+        .info
+          img.avatar(src="images/avatars/avatar-2.jpg", alt="Фотография")
+          .details
+            p.role Кандидат в президенты Тимошенко Юлия Владимировна
+            p.question Уважаемые Украинцы! Как Вы считаете - может ли Украина быть с двумя государственными языками?
+          nav
+            p.start-in.countdown-widget Будет задан через:
+              time(datetime="2014-04-28T12:12Z") 23ч:16м:55с
+
+      section.partners
+        h2.title Наши партнеры
+        .partners-list
+          a(href="#")
+            img(src="images/partners/partner-1.jpg", alt="Логотип партнера")
+          a(href="#")
+            img(src="images/partners/partner-2.jpg", alt="Логотип партнера")
+          a(href="#")
+            img(src="images/partners/partner-3.jpg", alt="Логотип партнера")
+          a(href="#")
+            img(src="images/partners/partner-4.jpg", alt="Логотип партнера")
+          a(href="#")
+            img(src="images/partners/partner-5.jpg", alt="Логотип партнера")
+          a(href="#")
+            img(src="images/partners/partner-6.jpg", alt="Логотип партнера")
+          a(href="#")
+            img(src="images/partners/partner-7.jpg", alt="Логотип партнера")
+          a(href="#")
+            img(src="images/partners/partner-8.jpg", alt="Логотип партнера")
+          a(href="#")
+            img(src="images/partners/partner-9.jpg", alt="Логотип партнера")
+          a(href="#")
+            img(src="images/partners/partner-10.jpg", alt="Логотип партнера")
+          a(href="#")
+            img(src="images/partners/partner-11.jpg", alt="Логотип партнера")
+          a(href="#")
+            img(src="images/partners/partner-12.jpg", alt="Логотип партнера")
+          a(href="#")
+            img(src="images/partners/partner-13.jpg", alt="Логотип партнера")
+      footer
+        p 2014 © Все права защищены.
+        p Наш адрес: Улица Когототам, дом 15, офис 34.
+        p Тел: 
+          a.tel(href="tel:+380507777777") 8 (050) 7777777
+          | , 
+          a.tel(href="tel:+380505555555") 8 (067) 5555555
+          | .
+        p E-mail: 
+          a(href="mailto:my@mail.com") my@mail.com

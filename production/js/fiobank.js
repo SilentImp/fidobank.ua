@@ -1,0 +1,1 @@
+requirejs(["modernizr/modernizr","TimerController"],function(r,e){return new e});

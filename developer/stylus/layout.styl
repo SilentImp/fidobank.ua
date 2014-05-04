@@ -1,0 +1,498 @@
+html.flexbox
+  .page
+    section.partners 
+      .partners-list
+        display flex
+        flex-wrap wrap
+        justify-content space-between 
+
+html
+  font-family "Lucida Sans Unicode", Helvetica, Arial, sans-serif;
+  img
+    max-height 100%
+    max-width 100%
+  a
+    color #000
+    text-decoration underline
+    &:hover
+       text-decoration none
+
+.page
+  max-width 988px 
+  padding 0 20px
+  margin auto
+  .vote-block
+    max-width 770px
+    margin auto
+    border-collapse separate
+    td
+      vertical-align middle
+      width 33%
+      padding-top 3px
+    td:first-child
+      min-width 80px
+      width 80px
+    thead
+      td
+        height 48px
+        line-height 48px
+        font-size 30px
+        font-weight bold
+        color #FFF
+        text-shadow 0 2px 2px rgba(0,0,0,.35)
+        
+        text-align center
+        white-space nowrap
+        &.yes
+          background-color #47ba2c
+          background linear-gradient(to bottom, rgba(70,185,44,1) 0%,rgba(24,140,37,1) 100%)
+          box-shadow inset 0 0 0 1px #cbcbcb
+        &.no
+          padding-left 16px
+          background-color #d13939 
+          background linear-gradient(to bottom, rgba(209,57,57,1) 0%,rgba(144,34,34,1) 100%)
+          box-shadow  inset 16px 0 0 0 #fff,
+                      inset 16px 0 0 1px #cbcbcb,
+                      inset -1px 0 0 0 #cbcbcb
+        &.pass
+          padding-left 16px
+          background-color #ffb000
+          background linear-gradient(to bottom, rgba(255,176,0,1) 0%,rgba(221,148,31,1) 100%) 
+          box-shadow  inset 16px 0 0 0 #fff,
+                      inset 16px 0 0 1px #cbcbcb,
+                      inset -1px 0 0 0 #cbcbcb
+          font-size 18px
+          
+    tbody
+      tr
+        border-top 1px solid #dbdbdb
+      td:first-child
+        padding 0
+        vertical-align middle
+        text-align center
+        min-height 74px
+        height 74px
+        img
+          vertical-align top
+      td:first-child+td
+        padding 0 10px
+        box-shadow  inset 0 1px 0 0 #fff,
+                    inset 0 2px 0 0 #dbdbdb,
+                    inset 0 3px 0 0 #fff
+      td
+        &.yes
+          background-color #F3FFEF
+        &.no
+          background-color #fff0f0 
+        &.pass
+          background-color #fffae1
+        span
+          display none
+        box-shadow  inset 0 1px 0 0 #fff,
+                    inset 0 2px 0 0 #dbdbdb,
+                    inset 0 3px 0 0 #fff,
+                    inset 16px 0 0 0 #fff
+                    
+                     
+        color #262626
+        font-size 14px
+        line-height 18px
+        padding 0 10px 0 26px
+    tfoot
+      tr
+        border-top 1px solid #dbdbdb
+      td
+        font-size 14px
+        line-height 18px
+        padding 12px 0 9px 16px
+        text-align center
+        box-shadow  inset 0 1px 0 0 #fff,
+                    inset 0 2px 0 0 #dbdbdb,
+                    inset 0 3px 0 0 #fff
+  header
+    menu
+      margin 24px 0 6px
+      border solid #dbdbdb
+      border-width 1px 0
+      padding 1px 0
+      line-height 23px
+      &:after
+        content "."
+        height 0
+        font-size 0
+        line-height 0
+        overflow hidden
+        display block
+        text-indent -9999px
+        clear both
+      nav.versions
+        display inline-block
+        font-size 12px
+        padding 0 10px
+        border-right 1px solid #dbdbdb
+        a
+          display inline-block
+          vertical-align middle
+          margin 0 4px 
+          
+      nav.main
+        display inline-block
+        font-size 16px
+        a
+          display inline-block
+          margin-left 14px
+          vertical-align middle
+          text-decoration none
+          &:hover
+            text-decoration underline
+            
+      nav.languages
+        float right
+        line-height 23px
+        padding-right 10px
+        a
+          margin 5px 4px 
+          float left
+          font-size 0
+          line-height 0
+          width 19px
+          height 14px
+          overflow hidden
+          text-indent -9999px
+          display inline-block
+          border 1px solid #cacaca
+          &[hreflang="de"]
+            background url("../images/lang/de.jpg") 
+          &[hreflang="en"]
+            background url("../images/lang/en.jpg") 
+          &[hreflang=es]
+            background url("../images/lang/es.jpg") 
+          &[hreflang=fr]
+            background url("../images/lang/fr.jpg") 
+          &[hreflang=ru]
+            background url("../images/lang/ru.jpg") 
+          &[hreflang="ua"]
+            background url("../images/lang/ua.jpg") 
+    .banner
+      display block
+      margin-bottom 6px
+  section
+    padding 24px 0 0 
+    background url("../images/bg/section.jpg") 50% 0 no-repeat
+    background-size 100% 
+    min-height 120px
+    &:after
+      content "."
+      height 0
+      font-size 0
+      line-height 0
+      overflow hidden
+      display block
+      text-indent -9999px
+      clear both
+    .title
+      border 1px solid #cecece
+      background-color #73A9D6
+      color #fff
+      padding 9px 20px
+      display inline-block   
+      font-size 18px
+      line-height 24px 
+      margin-bottom 24px
+    &.poll
+      &.current
+        .info
+          .details
+            .question
+              font-size 24px
+              line-height 36px
+              color #DC0000
+              text-align center 
+      .info
+        margin 0 0 24px 
+        position relative
+        &:after
+          content "."
+          height 0
+          font-size 0
+          line-height 0
+          overflow hidden
+          display block
+          text-indent -9999px
+          clear both
+        .avatar
+          float left
+          position relative
+          left 100%
+          margin-left -100%
+          width 170px
+          height 170px
+          z-index 1
+        .details
+          width 100%
+          z-index 0
+          padding 0 190px
+          box-sizing border-box
+          float left
+          position relative
+          left 100%
+          margin-left -100%
+          &:after
+            content "."
+            display block
+            overflow hidden
+            text-indent -9999px
+            font-size 0
+            line-height 0
+            height 24px
+            background url("../images/bg/vote.png") 50% 0 no-repeat
+            background-size 100%
+          .role
+            border 1px solid #cecece
+            background-color #d3edff
+            background linear-gradient(to bottom, rgba(212,237,255,1) 0%,rgba(159,197,248,1) 100%)
+            color #000
+            padding 12px 20px
+            display block   
+            font-size 14px
+            line-height 18px
+            margin-bottom 15px
+          .question
+            background #FFF
+            border 1px solid #cecece
+            padding 9px 20px
+            font-size 18px
+            line-height 24px
+            color #3A4047 
+            position relative
+            &:before
+              content "."
+              font-size 0
+              line-height 0
+              height 0
+              width 0
+              overflow hidden
+              text-indent -9999px
+              position absolute
+              right 100%
+              top 21px
+              margin-top -6px
+              border-style solid
+              border-color transparent #cecece transparent transparent
+              border-width 6px 12px 6px 0
+            &:after
+              content "."
+              font-size 0
+              line-height 0
+              height 0
+              width 0
+              overflow hidden
+              text-indent -9999px
+              position absolute
+              right 100%
+              top 21px
+              margin-top -6px
+              margin-right -2px
+              border-style solid
+              border-color transparent #fff transparent transparent
+              border-width 6px 12px 6px 0
+        nav
+          float left
+          position relative
+          left 100%
+          margin-left -170px
+          width 170px
+          z-index 1
+          .countdown
+          .length
+            padding 17px 0 
+            box-sizing border-box
+            min-height 78px 
+            border 1px solid #cecece
+            background-color #7cb0f7
+            background linear-gradient(to bottom, rgba(124,177,247,1) 0%,rgba(48,127,218,1) 100%)
+            color #fff
+            margin-top 14px
+            font-size 14px
+            line-height 18px
+            text-align center
+            white-space normal
+            &:first-child
+              margin-top 0
+            time
+              display block
+              font-size 18px
+              line-height 24px
+          .start-in
+            padding-top 48px
+            box-sizing border-box
+            min-height 170px 
+            border 1px solid #cecece
+            background-color #7cb0f7
+            background linear-gradient(to bottom, rgba(124,177,247,1) 0%,rgba(48,127,218,1) 100%)
+            color #fff
+            font-size 14px
+            line-height 18px
+            text-align center
+            white-space normal
+            time
+              display block
+              font-size 18px
+              line-height 24px
+              margin-top 24px 
+    &.partners
+      .partners-list
+        text-align justify
+        font-size 0
+        a
+          display inline-block
+          vertical-align middle
+          margin 0 12px 24px
+  footer
+    background url("../images/bg/section.jpg") 50% 0 no-repeat
+    background-size 100% 
+    padding 24px 0
+    text-align center
+    color #7C7C7C
+    font-size 14px
+    line-height 18px 
+
+
+
+@media screen and (max-width: 910px)
+  .page
+    header
+      menu
+        position relative
+        nav.versions
+          position absolute
+          left 0
+          top -24px
+          border-right-style none
+          
+@media screen and (max-width: 710px)
+  html.flexbox
+    .page
+      section.partners 
+        .partners-list
+          text-align left
+          display block
+  .page
+    .vote-block
+      display block
+      width auto
+      max-width none
+      tbody
+        display block
+        tr
+          display block
+          margin 0 0 24px
+          border-style none
+          td:first-child,
+          td:first-child+td,
+          td
+            display block
+            padding 10px
+            box-shadow none
+            border-style none
+            width auto
+            line-height 24px
+            position relative
+            b
+              display none
+            span
+              display inline-block
+              margin-right 10px
+              font-weight bold
+              font-size 14px
+          td:first-child
+            text-align left
+            margin-bottom 36px
+            padding 0
+          td:first-child+td
+            b
+              display block
+              position absolute
+              bottom 100%
+              left 10px
+              font-size 18px
+              line-height 36px
+              font-weight bold
+      thead
+        display none
+      tfoot
+        display none
+    .graph-container
+      transform scale(.75)
+      transform-origin 50% 0
+      margin-bottom -100px
+    section.poll
+      .info
+        .details
+          padding-right 0
+        nav
+          margin 0
+          width auto
+          clear both
+          float none
+          display block
+          position static
+          white-space nowrap
+          p.start-in
+            min-height 0
+            padding 17px 20px
+            display block
+            margin 0
+            height auto
+            time
+              margin 0
+          p.countdown, 
+          p.length
+            padding 17px 20px
+            margin 0
+            width 48%
+            display inline-block
+          p.length
+            float left
+          p.countdown
+            float right
+    header
+      menu
+        nav.languages
+          position absolute
+          right 0
+          bottom 100%
+
+@media screen and (max-width: 550px)
+  .page
+    .graph-container
+      transform scale(.6)
+      transform-origin 0 0
+      margin-bottom -120px
+          
+@media screen and (max-width: 500px)
+  .page
+    section.poll
+      .info
+        .details
+          padding-left 0
+        .avatar
+          position static
+          display block
+          float none
+          left 0
+          margin 0 auto 24px
+        .question
+          &:before,
+          &:after
+            display none
+    header
+      padding-top 24px
+      menu
+        nav.languages
+          right auto
+          left 0
+          padding-left 10px
+        nav.versions
+          position absolute
+          top -48px
