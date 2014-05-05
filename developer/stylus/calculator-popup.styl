@@ -1,0 +1,146 @@
+.calculator-popup
+  position fixed
+  top 0
+  right 0
+  left 0
+  z-index 200
+  background-color #FFF
+  .wrapper
+    position relative
+    max-width 416px
+    margin 0 auto
+    height 96px
+    padding 0 32px 0 576px 
+    background #fff url('../images/logotype/footer-logotype.png') 10px 50% no-repeat
+    .monitor
+      padding 12px 32px
+      height 72px
+      white-space nowrap
+      .details
+        display inline-block
+        vertical-align middle
+        line-height 48px
+        height 48px
+        font-size 18px
+        font-family 'Plumb-Bold'
+        color #FFF
+        background-color #3177CD
+        overflow hidden
+        padding 0 16px
+        border-radius 3px
+        text-decoration none
+        &:active
+          padding-top 2px
+          height 46px 
+        &:hover,
+        &:focus
+          background-color #1a64c0     
+      .percent 
+        width 72px
+        height 72px
+        border-radius 100%
+        background-color #5a7394
+        color #FFF
+        text-align center
+        font-size 24px
+        line-height 72px
+        margin 0 20px 0 0 
+        display inline-block
+        vertical-align middle
+      .summ
+        height 72px
+        line-height 72px
+        border-left 2px solid #b7bbc0
+        padding 0 0 0 20px 
+        font-family 'Plumb-Bold'
+        position relative
+        display inline-block
+        vertical-align middle
+        color #5a7394
+        margin-right 16px
+        .currency
+          font-size 24px
+          vertical-align baseline
+        b
+          font-size 36px
+          line-height 72px
+          display inline-block
+          vertical-align baseline
+        &:before
+          height 0
+          width 0
+          overflow hidden
+          font-size 0
+          line-height 0
+          content "."
+          text-indent -9999px
+          display block
+          position absolute
+          left 0
+          top 50%
+          margin -6px 0 0
+          border-color transparent transparent transparent #b7bbc0
+          border-style solid none solid solid
+          border-width 6px 0 6px 6px
+        &:after
+          height 0
+          width 0
+          overflow hidden
+          font-size 0
+          line-height 0
+          content "."
+          text-indent -9999px
+          display block
+          position absolute
+          left -3px
+          top 50%
+          margin -6px 0 0
+          border-color transparent transparent transparent #fff
+          border-style solid none solid solid
+          border-width 6px 0 6px 6px
+          
+    .unity-calculator,  
+    .double-guarantee-calculator,
+    .plastic-fantasy-calculator
+      position absolute
+      left 96px
+      top -96px
+      height 96px
+      width 480px
+      &.double-guarantee-calculator
+        .summ
+          width 232px
+        .drop-down-selector
+          margin-right 0
+          width 232px
+          
+      &.plastic-fantasy-calculator
+        .summ
+          width 480px
+          
+      input
+        outline none
+        border 2px solid #b7bbc0
+        color #7e8691
+        font-size 14px  
+        line-height 16px
+        padding 8px 16px 
+        height 36px
+        vertical-align middle
+        display inline-block
+        box-sizing border-box
+        margin-right 16px
+        &.summ
+          width 144px
+          text-align right
+        &:hover,
+        &:focus
+          color #5a7394
+          border-color #5e7aa0 
+      &.current
+        top 32px
+      
+
+      
+
+

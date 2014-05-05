@@ -17,6 +17,78 @@ html(lang="ru")
           a(href="tel:+380800307676") 0 800 30 76 76
             span Безкоштовно зі стаціонарних та мобільних телефонів в Україні
     
+    .calculator-popup
+      .wrapper
+        .current.unity-calculator
+          input.summ(type="text", name="loan_size", value="", placeholder="Сумма")
+          .drop-down-selector.small.currency
+            .current.icon-down-open ГРН
+            .options
+              .option
+                input(name="loan_currency", id="loan_currency_uah_popup", value="uah", type="radio", checked="checked")
+                label(for="loan_currency_uah_popup") ГРН
+              .option
+                input(name="loan_currency", id="loan_currency_usd_popup", value="usd", type="radio")
+                label(for="loan_currency_usd_popup") USD
+              .option
+                input(name="loan_currency", id="loan_currency_eur_popup", value="eur", type="radio")
+                label(for="loan_currency_eur_popup") EUR
+          .drop-down-selector.small.term
+            .current.icon-down-open 1 месяц
+            .options
+              .option
+                input(name="loan_term", id="loan_term_1_popup", value="1", type="radio", checked="checked")
+                label(for="loan_term_1_popup") 1 месяц
+              .option
+                input(name="loan_term", id="loan_term_2_popup", value="2", type="radio")
+                label(for="loan_term_2_popup") 2 месяца
+              .option
+                input(name="loan_term", id="loan_term_3_popup", value="3", type="radio")
+                label(for="loan_term_3_popup") 3 месяца
+              .option
+                input(name="loan_term", id="loan_term_6_popup", value="6", type="radio")
+                label(for="loan_term_6_popup") 6 месяцев
+              .option
+                input(name="loan_term", id="loan_term_9_popup", value="9", type="radio")
+                label(for="loan_term_9_popup") 9 месяцев
+              .option
+                input(name="loan_term", id="loan_term_12_popup", value="12", type="radio")
+                label(for="loan_term_12_popup") 370 дней
+              .option
+                input(name="loan_term", id="loan_term_18_popup", value="18", type="radio")
+                label(for="loan_term_18_popup") 18 месяцев
+              .option
+                input(name="loan_term", id="loan_term_24_popup", value="24", type="radio")
+                label(for="loan_term_24_popup") 24 месяца
+          
+        .double-guarantee-calculator
+          input.summ(name="loan_size", value="", placeholder="Сумма в USD")
+          .drop-down-selector.small.term
+            .current.icon-down-open 3 месяца
+            .options
+              .option
+                input(name="loan_term", id="loan_term_3_double_popup", value="3", type="radio", checked="checked")
+                label(for="loan_term_3_double_popup") 3 месяца
+              .option
+                input(name="loan_term", id="loan_term_6_double_popup", value="6", type="radio")
+                label(for="loan_term_6_double_popup") 6 месяцев
+              .option
+                input(name="loan_term", id="loan_term_9_double_popup", value="9", type="radio")
+                label(for="loan_term_9_double_popup") 9 месяцев
+              .option
+                input(name="loan_term", id="loan_term_12_double_popup", value="12", type="radio")
+                label(for="loan_term_12_double_popup") 12 месяцев
+
+        .plastic-fantasy-calculator
+          input.summ(name="loan_size", value="", placeholder="Сумма в UAH")
+
+        section.monitor
+          p.percent +24%
+          p.summ
+            b 12800
+            span.currency ГРН
+          a.details(href="#") Подробнее
+
     .back-to-top.icon-up-open
 
     section.calculator
@@ -29,11 +101,11 @@ html(lang="ru")
               a.double(href="#double-guarantee-calculator") Двойная гарантия
               a.plastic(href="#plastic-fantasy-calculator") Пластик Фантастик
             .tabs
-              form(action="/deposit/", method="post")
+              form.unity-calculator.current(action="/deposit/", method="post")
                 fieldset
                   input.summ(type="text", name="loan_size", value="", placeholder="Сумма")
                   .drop-down-selector.currency
-                    .current ГРН
+                    .current.icon-down-open ГРН
                     .options
                       .option
                         input(name="loan_currency", id="loan_currency_uah", value="uah", type="radio", checked="checked")
@@ -44,9 +116,8 @@ html(lang="ru")
                       .option
                         input(name="loan_currency", id="loan_currency_eur", value="eur", type="radio")
                         label(for="loan_currency_eur") EUR
-
                   .drop-down-selector.term
-                    .current 1 месяц
+                    .current.icon-down-open 1 месяц
                     .options
                       .option
                         input(name="loan_term", id="loan_term_1", value="1", type="radio", checked="checked")
@@ -73,27 +144,27 @@ html(lang="ru")
                         input(name="loan_term", id="loan_term_24", value="24", type="radio")
                         label(for="loan_term_24") 24 месяца
               
-              form(action="/deposit/", method="post")
+              form.double-guarantee-calculator(action="/deposit/", method="post")
                 fieldset
                   input.summ(name="loan_size", value="", placeholder="Сумма в USD")
 
                   .drop-down-selector.term
-                    .current 3 месяца
+                    .current.icon-down-open 3 месяца
                     .options
                       .option
-                        input(name="loan_term", id="loan_term_3", value="3", type="radio", checked="checked")
-                        label(for="loan_term_3") 3 месяца
+                        input(name="loan_term", id="loan_term_3_double", value="3", type="radio", checked="checked")
+                        label(for="loan_term_3_double") 3 месяца
                       .option
-                        input(name="loan_term", id="loan_term_6", value="6", type="radio")
-                        label(for="loan_term_6") 6 месяцев
+                        input(name="loan_term", id="loan_term_6_double", value="6", type="radio")
+                        label(for="loan_term_6_double") 6 месяцев
                       .option
-                        input(name="loan_term", id="loan_term_9", value="9", type="radio")
-                        label(for="loan_term_9") 9 месяцев
+                        input(name="loan_term", id="loan_term_9_double", value="9", type="radio")
+                        label(for="loan_term_9_double") 9 месяцев
                       .option
-                        input(name="loan_term", id="loan_term_12", value="12", type="radio")
-                        label(for="loan_term_12") 12 месяцев
+                        input(name="loan_term", id="loan_term_12_double", value="12", type="radio")
+                        label(for="loan_term_12_double") 12 месяцев
 
-              form(action="/deposit/", method="post")
+              form.plastic-fantasy-calculator(action="/deposit/", method="post")
                 fieldset
                   input.summ(name="loan_size", value="", placeholder="Сумма в UAH")
 
@@ -109,6 +180,23 @@ html(lang="ru")
                   a.fb.icon-facebook(href="#")
                   a.tw.icon-twitter-bird(href="#")
                   a.gp.icon-googleplus-rect(href="#")
+          
+          form.callback-form(action="/callback/", method="post")
+            header
+              h3.title Хотите получить профессиональную консультацияю по депозиту?
+              a.back-to-calculator.icon-calc(href="#")
+            fieldset
+              .line
+                input(type="text", placeholder="Укажите Ваше имя", value="", name="person")
+                input(type="text", placeholder="Номер Вашего телефона", value="", name="phone")
+              button(type="submit") Перезвоните мне
+            footer
+              p Укажите Свой номер телефона и ФИДОБАНК свяжется с Вами
+              nav.social
+                a.fb.icon-facebook(href="#")
+                a.tw.icon-twitter-bird(href="#")
+                a.gp.icon-googleplus-rect(href="#")
+
 
     section.deposit.deposit-unity
       header
