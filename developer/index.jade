@@ -16,18 +16,109 @@ html(lang="ru")
           h2.title Ответы на вопросы
           a(href="tel:+380800307676") 0 800 30 76 76
             span Безкоштовно зі стаціонарних та мобільних телефонів в Україні
+    
+    .back-to-top.icon-up-open
+
     section.calculator
       .outer-wraper
         .inner-wraper
-          //- h2.slogan Оформить заявку на депозит, становится гораздо проще!
+          h2.slogan Оформить заявку на депозит, становится гораздо проще!
+          .calculator-forms
+            nav.tab-navigation
+              a.unity.current(href="#unity-calculator") Еднiсть
+              a.double(href="#double-guarantee-calculator") Двойная гарантия
+              a.plastic(href="#plastic-fantasy-calculator") Пластик Фантастик
+            .tabs
+              form(action="/deposit/", method="post")
+                fieldset
+                  input.summ(type="text", name="loan_size", value="", placeholder="Сумма")
+                  .drop-down-selector.currency
+                    .current ГРН
+                    .options
+                      .option
+                        input(name="loan_currency", id="loan_currency_uah", value="uah", type="radio", checked="checked")
+                        label(for="loan_currency_uah") ГРН
+                      .option
+                        input(name="loan_currency", id="loan_currency_usd", value="usd", type="radio")
+                        label(for="loan_currency_usd") USD
+                      .option
+                        input(name="loan_currency", id="loan_currency_eur", value="eur", type="radio")
+                        label(for="loan_currency_eur") EUR
+
+                  .drop-down-selector.term
+                    .current 1 месяц
+                    .options
+                      .option
+                        input(name="loan_term", id="loan_term_1", value="1", type="radio", checked="checked")
+                        label(for="loan_term_1") 1 месяц
+                      .option
+                        input(name="loan_term", id="loan_term_2", value="2", type="radio")
+                        label(for="loan_term_2") 2 месяца
+                      .option
+                        input(name="loan_term", id="loan_term_3", value="3", type="radio")
+                        label(for="loan_term_3") 3 месяца
+                      .option
+                        input(name="loan_term", id="loan_term_6", value="6", type="radio")
+                        label(for="loan_term_6") 6 месяцев
+                      .option
+                        input(name="loan_term", id="loan_term_9", value="9", type="radio")
+                        label(for="loan_term_9") 9 месяцев
+                      .option
+                        input(name="loan_term", id="loan_term_12", value="12", type="radio")
+                        label(for="loan_term_12") 370 дней
+                      .option
+                        input(name="loan_term", id="loan_term_18", value="18", type="radio")
+                        label(for="loan_term_18") 18 месяцев
+                      .option
+                        input(name="loan_term", id="loan_term_24", value="24", type="radio")
+                        label(for="loan_term_24") 24 месяца
+              
+              form(action="/deposit/", method="post")
+                fieldset
+                  input.summ(name="loan_size", value="", placeholder="Сумма в USD")
+
+                  .drop-down-selector.term
+                    .current 3 месяца
+                    .options
+                      .option
+                        input(name="loan_term", id="loan_term_3", value="3", type="radio", checked="checked")
+                        label(for="loan_term_3") 3 месяца
+                      .option
+                        input(name="loan_term", id="loan_term_6", value="6", type="radio")
+                        label(for="loan_term_6") 6 месяцев
+                      .option
+                        input(name="loan_term", id="loan_term_9", value="9", type="radio")
+                        label(for="loan_term_9") 9 месяцев
+                      .option
+                        input(name="loan_term", id="loan_term_12", value="12", type="radio")
+                        label(for="loan_term_12") 12 месяцев
+
+              form(action="/deposit/", method="post")
+                fieldset
+                  input.summ(name="loan_size", value="", placeholder="Сумма в UAH")
+
+              section.monitor
+                p.percent +24%
+                p.summ
+                  b 12800
+                  span.currency ГРН
+                a.details(href="#") Подробнее
+              footer
+                p * Подробнее о депозите “Еднисть”
+                nav.social
+                  a.fb.icon-facebook(href="#")
+                  a.tw.icon-twitter-bird(href="#")
+                  a.gp.icon-googleplus-rect(href="#")
+
     section.deposit.deposit-unity
       header
         .wrapper
           h2.title Депозит «Єдність» 
           p Строковий вклад для клієнтів – фізичних осіб, що дозволяє примножити свої заощадження і в той же час здійснити реальну підтримку Збройним силам України. Банк пропонує клієнту отримати прибуток до 24% річних у гривні, 12% річних у доларах США і 11% річних в євро, при цьому ще плюс 1% річних від суми вкладу перерахувати на підтримку української армії.
           h3.sub-title Як це працюе?
+        .percent +24%
+      
       article
-
         section
           h3.title Це працюе так:
           p При відкритті клієнтом депозиту «Єдність» в будь-якій валюті ФІДОБАНК направляє 1% річних від суми вкладу в гривневому еквіваленті на рахунок Міністерства оборони України. Розглянемо такий приклад: ви відкриваєте вклад «Єдність» на суму 10 000 грн на 3 місяці. Процентна ставка для вас буде на рівні 24% річних, тобто після закінчення терміну ви отримаєте близько 600 грн доходу. Для української армії ставка становить 1% річних від суми депозиту, тобто для тримісячного вкладу дохід складе близько 25 грн. Перерахування коштів на рахунок Міністерства оборони України здійснюється на щомісячній основі
@@ -94,8 +185,9 @@ html(lang="ru")
           h2.title Депозит «Двойная гарантия» 
           p Cтроковий вклад в доларах США, який гарантує подвійний захист коштів клієнтів: Фондом гарантування вкладів фізичних осіб і портфелем номінованих у валюті облігацій внутрішньої державної позики (ОВДП), яким володіє ФІДОБАНК.
           h3.sub-title Як це працюе?
-      article
+        .percent +12%
 
+      article
         section
           h3.title Це працюе так:
           p строковий вклад в доларах США, який гарантує подвійний захист коштів клієнтів: Фондом гарантування вкладів фізичних осіб і портфелем номінованих у валюті облігацій внутрішньої державної позики (ОВДП), яким володіє ФІДОБАНК.
@@ -110,14 +202,33 @@ html(lang="ru")
             li виплата відсотків: щоквартально; 
             li пролонгація вкладу: не передбачено. 
 
+        section
+          h3.title Процентна ставка:
+          table
+            thead
+              tr
+                th валюта
+                th 3 месяца
+                th 6 месяцев
+                th 9 месяца
+                th 12 месяцев
+            tbody
+              tr
+                td USD
+                td 12%
+                td 7%
+                td 7%
+                td 8%
+
     section.deposit.deposit-plastic-fantasy
       header
         .wrapper
           h2.title Депозит «Пластик Фантастик» 
           p Сберегательная карта «Пластик-Фантастик»  – предложение ФИДОБАНКа, которое  обеспечивает клиенту свободный доступ к сбережениям и позволяет получать 20% годовых в гривне на остаток на карточном счете. Этот продукт для людей, которые хотят круглосуточно контролировать свои средства, самостоятельно управлять своими тратами и получать максимальный доход от размещения своих денег даже на сверхкороткий период.
           h3.sub-title Як це працюе?
-      article
+        .percent +20%
 
+      article
         section
           h3.title Це працюе так:
           p При помощи бесплатной карты мгновенного выпуска платежной системы MasterCard вы можете рассчитываться средствами со сберегательного счета в торгово-сервисной сети и снимать в банкоматах именно тогда, когда вам это нужно. Доступна также именная карта с чипом более высокого класса Mastercard Debit Standard со стоимостью выпуска 100 грн. При этом сберегательный счет можно пополнять без комиссии на любую сумму в отделениях ФИДОБАНКа и терминалах самообслуживания.
@@ -142,18 +253,12 @@ html(lang="ru")
           table
             thead
               tr
-                th валюта
-                th 3 месяца
-                th 6 месяцев
-                th 9 месяца
-                th 12 месяцев
+                th до 1000 грн
+                th свыше 1000 грн
             tbody
               tr
-                td USD
-                td 12%
-                td 7%
-                td 7%
                 td 8%
+                td 20%
 
     footer
       p ПуАТ «ФІДОБАНК». Банківські послуги. 
