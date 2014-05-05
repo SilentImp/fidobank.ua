@@ -249,6 +249,8 @@ define [
       @current = element
       @current.addClass 'current'
 
+      @recountForm()
+
       
     isCalculatorVisible: =>
       if @visibilityChecked == true
