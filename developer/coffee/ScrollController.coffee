@@ -3,6 +3,9 @@ define [], ()->
   class ScrollController
     constructor: ()->
 
+    scrollToTop: =>
+      
+
     checkIfElementVisible: (element)=>
       docViewTop = $(window).scrollTop()
       docViewBottom = docViewTop + $(window).height()
