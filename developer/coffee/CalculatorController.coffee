@@ -1,27 +1,13 @@
 define [
   "big.js/big",
   "ScrollController",
-  "jquery.scrollTo"
-  ], (Big, ScrollController, scrl)->
+  "jquery.scrollTo",
+  "jquery.inputmask/dist/jquery.inputmask.bundle.min"
+  ], (Big, ScrollController, scrl, plgn)->
 
   class CalculatorController
     constructor: ()->
       @Big = Big
-
-      @enter = 13
-      @esc = 27
-      @dash = 189
-      @ctrl = 17
-      @cmd = 91
-      @shift = 16
-      @alt = 18
-      @space = 32
-      @chars =  [@dash, @space]
-      @r = 82
-      @numbers = [48, 49, 50, 51, 52, 53, 54, 55, 56, 57]
-      @controls = [8, 9, 45, 46, 39, 37, @esc, @ctrl, @alt, @shift, @enter, @cmd]
-
-      @controlsPressed = []
 
       @itype = 'click'
       if $('html').hasClass 'touch'
@@ -53,8 +39,7 @@ define [
       @calcMonitorPercent = @calcMonitor.find '.percent'
 
       @summ = $ 'input.summ'
-      @summ.on 'keyup', @keyUp
-      @summ.on 'keydown', @filterLetter
+      @summ.inputmask("decimal", { allowMinus: false })
       @summ.on 'keypress', @syncSumm
 
       @ddi = $ '.drop-down-selector input'
@@ -76,34 +61,6 @@ define [
       @isCalculatorVisible()
       @recountForm()
 
-
-    keyUp: (event)=>
-
-      index = @controlsPressed.indexOf event.which
-      if index > -1  
-        @controlsPressed.splice index, 1
-
-
-    filterLetter: (event)=>
-
-      if event.which not in @controls and event.which not in @numbers and event.which != @r
-        event.preventDefault()
-
-      if event.which in @controls and @controlsPressed.indexOf(event.which)<0
-        @controlsPressed.push event.which
-
-      switch event.which
-        when @r
-          isCmd = (@controlsPressed.indexOf(@cmd) > -1)
-          isCtrl = (@controlsPressed.indexOf(@ctrl) > -1)
-          if not isCmd and not isCtrl
-            event.preventDefault()
-        when @esc
-          event.preventDefault()
-          @summ.blur()
-        when @enter
-          event.preventDefault()
-          @summ.blur()
 
     syncDropDowns: (event)=>
       input = $ event.currentTarget
@@ -342,3 +299,5 @@ define [
 
 
   return CalculatorController
+
+  
