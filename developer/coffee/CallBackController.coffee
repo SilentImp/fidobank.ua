@@ -34,12 +34,14 @@ define [], ->
     checkRussian: (event)=>
       val = @name.val()
       if val.match(/[^\sа-я]/ig) != null
-        @name.val(val.replace(/[^\sа-я]/,""))
+        @name.val(val.replace(/[^\sа-яхъ]/,""))
 
     filterCyrillic: (event)=>
 
+      console.log String.fromCharCode(event.which), event.which
+
       notIsLetter = String.fromCharCode(event.which)
-      notIsLetter = notIsLetter.match(/[a-z]/i) == null
+      notIsLetter = notIsLetter.match(/[a-zÝÛºÞÜ¼¾À]/i) == null
 
       if event.which not in @controls and notIsLetter and event.which != @space
         event.preventDefault()
