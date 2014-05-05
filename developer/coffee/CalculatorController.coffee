@@ -267,12 +267,12 @@ define [
       
       element = @tabs.find('.'+target)
       @tabs.find('>.current').removeClass 'current'
-
       @tabs.find('>.'+target).addClass 'current'
 
       # @tabs.scrollTo(element, 500, {axis:'x'});
 
       @popupContent.find('>.current').removeClass 'current'
+      @popupContent.find('>.'+target).addClass 'current'
       
       @current = element
       @current.addClass 'current'
