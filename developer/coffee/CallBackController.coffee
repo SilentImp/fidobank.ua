@@ -12,7 +12,7 @@ define [], ->
       @name = @widget.find 'input[name=person]'
 
       @name.inputmask('Regex', {regex: "[а-яА-Я]{,32}"})
-      @tel.inputmask("mask", {"mask": "+38 099 999 99 99", showMaskOnHover: false})
+      @tel.inputmask("mask", {"mask": "+38 099 999 99 99", clearMaskOnLostFocus: false})
       # @tel.inputmask("+38 099 999 99 99")
       # +38 0__ ___ __ __
 
