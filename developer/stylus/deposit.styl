@@ -1,4 +1,6 @@
 .deposit
+  text-align center
+  
   &.deposit-unity 
     header
       background url("../images/bg/bg-1.jpg") 50% 100% no-repeat
@@ -36,6 +38,7 @@
       th
         width 160px
   header
+    min-width 1024px
     height 325px
     line-height 325px
     position relative
@@ -53,10 +56,13 @@
     .wrapper
       z-index 4
       display inline-block
+      text-align left
       vertical-align middle
-      max-width 1024px
+      box-sizing border-box
+      width 1024px
       margin 0 auto
-      padding 0 32px 0 240px
+      padding 0 32px 0 230px
+      
       &:after
         content "."
         display block
@@ -66,7 +72,8 @@
         text-indent -9999px
         position absolute
         top 42px
-        left 32px
+        left 50%
+        margin-left -480px
       p
         color #E7E7E7
         font-size 14px
@@ -84,10 +91,14 @@
         font-size 24px
         line-height 32px 
   article
-    max-width 1024px
+    // max-width 1024px
+    display inline-block
+    box-sizing border-box
+    width 1024px
     margin 0 auto
     padding 0 32px 0 208px
     counter-reset level1
+    text-align left
     section
       counter-increment level1
       color #595959

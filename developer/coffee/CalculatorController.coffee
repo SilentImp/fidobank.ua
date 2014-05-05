@@ -12,16 +12,37 @@ define [
       @scrollController = new ScrollController()
       @visibilityChecked = false
       @mainCalculator = $ '.calculator-forms'
+      @callBackForm = $ '.callback-form'
       @tabs = @mainCalculator.find '.tabs'
       @tabNav = @mainCalculator.find '.tab-navigation'
       @upButton = $ '.back-to-top'
       @popup = $ '.calculator-popup'
       @popupContent = @popup.find '.wrapper'
+      @detailsButton = @tabs.find '.monitor .details'
+      @calcButton = @callBackForm.find '.back-to-calculator'
+
 
       @tabNav.find('a').on @itype, @selectDeposit
+      @detailsButton.on @itype, @showCallBackForm
+      @calcButton.on @itype, @showCalcForm
+      @upButton.on @itype, @scrollTop
 
       $(window).on 'scroll', @isCalculatorVisible
       @isCalculatorVisible()
+
+    scrollTop: (event)=>
+      event.preventDefault()
+      @scrollController.scrollToTop()
+
+    showCalcForm: (event)=>
+      event.preventDefault()
+      @mainCalculator.show()
+      @callBackForm.hide()
+
+    showCallBackForm: (event)=>
+      event.preventDefault()
+      @mainCalculator.hide()
+      @callBackForm.show()
 
     selectDeposit: (event)=>
       event.preventDefault()

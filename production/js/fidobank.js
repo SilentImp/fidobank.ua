@@ -1,1 +1,1 @@
-requirejs(["modernizr/modernizr","requestAnimationFramePolyfill","jquery/dist/jquery.min","CalculatorController"],function(r,e,n,i){return new i});
+requirejs(["modernizr/modernizr","requestAnimationFramePolyfill","jquery/dist/jquery.min","CalculatorController","ParallaxController"],function(r,e,n,l,o){var i,t,a,u,d;for(new l,u=$(".deposit>header"),d=[],t=0,a=u.length;a>t;t++)i=u[t],d.push(new o(i));return d});
