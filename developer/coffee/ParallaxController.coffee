@@ -32,7 +32,6 @@ define [
     recountPercPos: (percents)=>
       
       bottom = parseFloat((@max*percents/100)-64,10)
-      console.log bottom
       @percent.css
         'bottom': bottom.toString()+'px'
 
