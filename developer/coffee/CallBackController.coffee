@@ -16,6 +16,7 @@ define [], ->
       @numbers = [48, 49, 50, 51, 52, 53, 54, 55, 56, 57]
       @controls = [8, 9, 45, 46, 39, 37, @esc, @ctrl, @alt, @shift, @enter, @cmd]
       @controlsPressed = []
+      @phoneBuffer = []
 
       @itype = 'click'
       if $('html').hasClass 'touch'
