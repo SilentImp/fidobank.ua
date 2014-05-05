@@ -9,7 +9,7 @@ html
 .back-to-top
   position fixed
   bottom 32px
-  right 32px
+  left -9999px
   display block
   width 144px
   height 144px
@@ -18,11 +18,18 @@ html
   border-radius 100%
   background-color #5a7394
   color #fff 
-  opacity .3
+  opacity 0
   z-index 100
   font-size 48px
   cursor pointer
   transition opacity .25s ease
+  pointer-events none
+  &.visible
+    pointer-events all
+    left auto
+    right 32px
+    display block
+    opacity .3
   &:hover,
   &:focus
     opacity .6

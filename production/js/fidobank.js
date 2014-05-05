@@ -1,1 +1,1 @@
-requirejs(["modernizr/modernizr"],function(){});
+requirejs(["requestAnimationFramePolyfill","jquery/dist/jquery.min","modernizr/modernizr","CalculatorController"],function(r,e,n,i){return new i});

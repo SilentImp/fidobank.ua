@@ -1,0 +1,1 @@
+var __bind=function(n,e){return function(){return n.apply(e,arguments)}};define([],function(){var n;return n=function(){function n(){this.checkIfElementVisible=__bind(this.checkIfElementVisible,this)}return n.prototype.checkIfElementVisible=function(n){var e,t,i,r;return t=$(window).scrollTop(),e=t+$(window).height(),r=n.offset().top,i=r+n.height(),e>r&&i>t?!0:!1},n}()});
