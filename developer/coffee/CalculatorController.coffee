@@ -58,7 +58,7 @@ define [
       
       if type == 'unity-calculator'
 
-        summ = parseFloat(@current.find('.summ').val(),10)
+        summ = @Big(@current.find('.summ').val())
         if isNaN(summ)
           summ = 0
         term = @current.find('[name="loan_term"]:checked').val()
@@ -105,10 +105,8 @@ define [
         @calcMonitorPercent.text(perc+'%')
         @popupMonitorPercent.text(perc+'%')
 
-        summ = @Big(summ)
         term = parseInt(term,10)
         result = summ.times(perc/100).div(12).times(term).plus(summ).toFixed(0)
-        # console.log result.toString()
         len = parseInt(result.toString().length,10)
 
         if len <= 6
@@ -133,7 +131,7 @@ define [
 
       else if type == 'double-guarantee-calculator'
 
-        summ = parseFloat(@current.find('.summ').val(),10)
+        summ = @Big(@current.find('.summ').val())
         term = @current.find('[name="loan_term"]:checked').val()
         
         switch term
@@ -148,10 +146,8 @@ define [
         @calcMonitorPercent.text(perc+'%')
         @popupMonitorPercent.text(perc+'%')
 
-        summ = @Big(summ)
         term = parseInt(term,10)
         result = summ.times(perc/100).div(12).times(term).plus(summ).toFixed(0)
-        # console.log result.toString()
         len = parseInt(result.toString().length,10)
 
         if len <= 6
@@ -175,8 +171,9 @@ define [
 
       else if type == 'plastic-fantasy-calculator'
 
-        summ = parseFloat(@current.find('.summ').val(),10)
-        if value<1000
+        summ = @Big(@current.find('.summ').val())
+
+        if summ.lt(1000)
           perc = 8
         else
           perc = 20
@@ -186,10 +183,27 @@ define [
         @calcMonitorCurrency.html('ГРН')
         @popupMonitorCurrency.html('ГРН')
 
-        result = summ+summ*(perc/100)
+        result = summ.times(perc/100).plus(summ).toFixed(0)
+        len = parseInt(result.toString().length,10)
 
-        @calcMonitorSumm.html(result)
-        @popupMonitorSumm.html(result)
+        if len <= 6
+          @calcMonitorSumm.removeClass 'small'
+          @calcMonitorSumm.removeClass 'very-small'
+          @popupMonitorSumm.removeClass 'small'
+          @popupMonitorSumm.removeClass 'very-small'
+        else if len > 6 && len < 9
+          @calcMonitorSumm.addClass 'small'
+          @calcMonitorSumm.removeClass 'very-small'
+          @popupMonitorSumm.addClass 'small'
+          @popupMonitorSumm.removeClass 'very-small'
+        else
+          @calcMonitorSumm.removeClass 'small'
+          @calcMonitorSumm.addClass 'very-small'
+          @popupMonitorSumm.removeClass 'small'
+          @popupMonitorSumm.adClass 'very-small'
+
+        @calcMonitorSumm.html(result.toString())
+        @popupMonitorSumm.html(result.toString())
 
 
 

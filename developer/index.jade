@@ -19,7 +19,8 @@ html(lang="ru")
     
     .calculator-popup
       .wrapper
-        .current.unity-calculator(data-type="unity-calculator")
+        
+        form.current.unity-calculator(data-type="unity-calculator", action="/", method="post")
           input.summ(id="loan_size_popup", data-linkedto="loan_size", type="text", name="loan_size", value="10000", placeholder="Сумма")
           .drop-down-selector.small.currency(data-linkedto="loan_currency")
             .current.icon-down-open ГРН
@@ -61,7 +62,7 @@ html(lang="ru")
                 input(name="loan_term", id="loan_term_24_popup", value="24", type="radio")
                 label(for="loan_term_24_popup") 24 месяца
           
-        .double-guarantee-calculator(data-type="double-guarantee-calculator")
+        form.double-guarantee-calculator(data-type="double-guarantee-calculator", action="/", method="post")
           input.summ(id="loan_size_double_popup", data-linkedto="loan_size_double", name="loan_size", value="10000", placeholder="Сумма в USD")
           .drop-down-selector.small.term(data-linkedto="loan_term_double")
             .current.icon-down-open 3 месяца
@@ -79,7 +80,7 @@ html(lang="ru")
                 input(name="loan_term", id="loan_term_12_double_popup", value="12", type="radio")
                 label(for="loan_term_12_double_popup") 12 месяцев
 
-        .plastic-fantasy-calculator(data-type="plastic-fantasy-calculator")
+        form.plastic-fantasy-calculator(data-type="plastic-fantasy-calculator", action="/", method="post")
           input.summ(id="loan_size_plastic_popup", data-linkedto="loan_size_plastic", name="loan_size", value="10000", placeholder="Сумма в UAH")
 
         section.monitor
