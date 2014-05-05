@@ -21,7 +21,7 @@ html(lang="ru")
       .wrapper
         
         form.current.unity-calculator(data-type="unity-calculator", action="/", method="post")
-          input.summ(type="text", name="loan_size", value="10000", placeholder="Сумма")
+          input.summ(autocomplete="off", maxlength="8", type="text", name="loan_size", value="10000", placeholder="Сумма")
           .drop-down-selector.small.currency
             .current.icon-down-open ГРН
             .options
@@ -63,7 +63,7 @@ html(lang="ru")
                 label(for="loan_term_24_popup") 24 месяца
           
         form.double-guarantee-calculator(data-type="double-guarantee-calculator", action="/", method="post")
-          input.summ(name="loan_size", value="10000", placeholder="Сумма в USD")
+          input.summ(autocomplete="off", maxlength="8", name="loan_size", value="10000", placeholder="Сумма в USD")
           .drop-down-selector.small.term
             .current.icon-down-open 3 месяца
             .options
@@ -81,7 +81,7 @@ html(lang="ru")
                 label(for="loan_term_12_double_popup") 12 месяцев
 
         form.plastic-fantasy-calculator(data-type="plastic-fantasy-calculator", action="/", method="post")
-          input.summ(name="loan_size", value="10000", placeholder="Сумма в UAH")
+          input.summ(autocomplete="off", maxlength="8", name="loan_size", value="10000", placeholder="Сумма в UAH")
 
         section.monitor
           p.percent +24%
@@ -106,7 +106,7 @@ html(lang="ru")
               
               form.current.unity-calculator(action="/deposit/", method="post", data-type="unity-calculator")
                 fieldset
-                  input.summ(type="text", name="loan_size", value="10000", placeholder="Cума")
+                  input.summ(autocomplete="off", maxlength="8", type="text", name="loan_size", value="10000", placeholder="Cума")
                   
                   .drop-down-selector.currency
                     .current.icon-down-open ГРН
@@ -150,7 +150,7 @@ html(lang="ru")
               
               form.double-guarantee-calculator(action="/deposit/", method="post", data-type="double-guarantee-calculator")
                 fieldset
-                  input.summ(name="loan_size", value="10000", placeholder="Сумма в USD")
+                  input.summ(autocomplete="off", maxlength="8", name="loan_size", value="10000", placeholder="Сумма в USD")
 
                   .drop-down-selector.term
                     .current.icon-down-open 3 месяца
@@ -170,7 +170,7 @@ html(lang="ru")
 
               form.plastic-fantasy-calculator(action="/deposit/", method="post", data-type="plastic-fantasy-calculator")
                 fieldset
-                  input.summ(name="loan_size", value="10000", placeholder="Сумма в UAH")
+                  input.summ(autocomplete="off", maxlength="8", name="loan_size", value="10000", placeholder="Сумма в UAH")
 
               section.monitor
                 p.percent +24%
@@ -192,8 +192,8 @@ html(lang="ru")
               a.back-to-calculator.icon-calc(href="#")
             fieldset
               .line
-                input(type="text", placeholder="Укажите Ваше имя", value="", name="person")
-                input(type="text", placeholder="+38 0__ ___ __ __", value="", name="phone")
+                input(autocomplete="off", maxlength="32", type="text", placeholder="Укажите Ваше имя", value="", name="person")
+                input(autocomplete="off", maxlength="17", type="text", value="+38 0__ ___ __ __", name="phone")
               button(type="submit") Перезвоните мне
             footer
               p Укажите Свой номер телефона и ФИДОБАНК свяжется с Вами
