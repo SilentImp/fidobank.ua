@@ -25,6 +25,8 @@ define [
       @detailsButton = @tabs.find '.monitor .details'
       @calcButton = @callBackForm.find '.back-to-calculator'
 
+      @updetails = @popup.find '.monitor .details'
+
       @popupMonitor = @popup.find('.monitor')
       @popupMonitorSumm = @popupMonitor.find 'b'
       @popupMonitorCurrency = @popupMonitor.find '.currency'
@@ -44,6 +46,8 @@ define [
       @popup.find('input').on 'change', @recountForm
       @tabs.find('input').on 'change', @recountForm
 
+
+      @updetails.on @itype, @showCallBackFormUp
       @tabNav.find('a').on @itype, @selectDeposit
       @detailsButton.on @itype, @showCallBackForm
       @calcButton.on @itype, @showCalcForm
@@ -240,6 +244,12 @@ define [
       event.preventDefault()
       @mainCalculator.show()
       @callBackForm.hide()
+
+    showCallBackFormUp: (event)=>
+      event.preventDefault()
+      @mainCalculator.hide()
+      @callBackForm.show()
+      @scrollController.scrollToElement(@callBackForm)
 
     showCallBackForm: (event)=>
       event.preventDefault()

@@ -66,6 +66,10 @@ define [], ()->
 
       return true
 
+    scrollToElement: (element)=>
+      @scrollToCoords element.offset().top-20, false
+      
+
     scrollToTop: =>
       @scrollToCoords 0, false
 
