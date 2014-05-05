@@ -46,7 +46,7 @@ define [
 
       maxHeight = $(window).height() + (@widgetHeight - 96)
       part = widgetTop - (docViewTop - (@widgetHeight - 96))
-      return Math.min(Math.max(parseFloat(part*100/maxHeight,10),0),100)
+      return 100-Math.min(Math.max(parseFloat(part*100/maxHeight,10),0),100)
 
     recountBGPos: (percents)=>
       @widget.css
