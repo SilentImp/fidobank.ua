@@ -1,7 +1,7 @@
 requirejs [
+  "modernizr/modernizr",
   "requestAnimationFramePolyfill",
   "jquery/dist/jquery.min",
-  "modernizr/modernizr",
   "CalculatorController"
-  ], (poly, $, moderniz, CalculatorController)->
+  ], (moderniz, poly, $, CalculatorController)->
     new CalculatorController()

@@ -10,7 +10,6 @@
     background-attachment fixed
     overflow hidden
     .inner-wraper
-      min-height 720px
       width 672px
       margin 80px auto 0
       .slogan
@@ -19,7 +18,9 @@
         line-height 48px
         font-family 'Plumb-Medium'
       .calculator-forms
-        margin 48px 0 0 
+        position relative
+        overflow hidden
+        margin 48px 0 64px
         background-color #FFF
         white-space nowrap
         font-size 0
@@ -40,6 +41,8 @@
             position relative
             text-overflow ellipsis
             text-align center
+            &.current
+              pointer-events none
             &:hover,
             &:focus,
             &.current
@@ -52,9 +55,11 @@
               width 254px
               border-left 1px solid #fff
         .tabs
+          width 672px
           overflow hidden
-          width 100%
-          position relative  
+          z-index 100
+          padding 0 0 136px 
+          
         form
           white-space normal
           display inline-block
@@ -89,7 +94,14 @@
             &:focus
               color #5a7394
               border-color #5e7aa0 
+              
         .monitor
+          position absolute
+          left 0
+          bottom 64px
+          width 608px
+          
+          z-index 1
           white-space normal
           padding 0 32px
           height 72px
@@ -173,6 +185,11 @@
               border-width 6px 0 6px 6px
               
         footer
+          position absolute
+          left 0
+          bottom 0
+          width 608px
+          z-index 1
           white-space normal
           padding 0 32px 16px
           line-height 48px

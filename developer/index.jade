@@ -89,19 +89,21 @@ html(lang="ru")
             span.currency ГРН
           a.details(href="#") Подробнее
 
-    .back-to-top.icon-up-open
+    a.back-to-top.icon-up-open(href="#")
 
     section.calculator
       .outer-wraper
         .inner-wraper
           h2.slogan Оформить заявку на депозит, становится гораздо проще!
+          
           .calculator-forms
             nav.tab-navigation
               a.unity.current(href="#unity-calculator") Еднiсть
               a.double(href="#double-guarantee-calculator") Двойная гарантия
               a.plastic(href="#plastic-fantasy-calculator") Пластик Фантастик
             .tabs
-              form.unity-calculator.current(action="/deposit/", method="post")
+              
+              form.unity-calculator(action="/deposit/", method="post")
                 fieldset
                   input.summ(type="text", name="loan_size", value="", placeholder="Сумма")
                   .drop-down-selector.currency
@@ -174,6 +176,7 @@ html(lang="ru")
                   b 12800
                   span.currency ГРН
                 a.details(href="#") Подробнее
+                
               footer
                 p * Подробнее о депозите “Еднисть”
                 nav.social
