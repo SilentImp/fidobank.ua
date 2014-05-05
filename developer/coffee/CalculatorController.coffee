@@ -16,6 +16,7 @@ define [
       @tabNav = @mainCalculator.find '.tab-navigation'
       @upButton = $ '.back-to-top'
       @popup = $ '.calculator-popup'
+      @popupContent = @popup.find '.wrapper'
 
       @tabNav.find('a').on @itype, @selectDeposit
 
@@ -32,8 +33,8 @@ define [
       link.addClass 'current'
       element = @tabs.find('.'+target)
       @tabs.scrollTo(element, 500, {axis:'x'});
-      # @popup.find('.current').removeClass 'current'
-      # @popup.find('.'+target).addClass 'current'
+      @popupContent.find('>.current').removeClass 'current'
+      @popupContent.find('.'+target).addClass 'current'
 
       
     isCalculatorVisible: =>
