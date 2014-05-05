@@ -64,11 +64,13 @@
           padding 0 0 136px 
           
         form
+          display none
           white-space normal
-          display inline-block
           vertical-align top
           padding 32px
           width 608px
+          &.current
+            display block
           &.plastic-fantasy-calculator
             .summ
               width 608px
@@ -137,6 +139,7 @@
             margin 0 20px 0 0 
             float left
           .summ
+            white-space nowrap
             height 72px
             line-height 72px
             border-left 2px solid #b7bbc0
@@ -154,6 +157,10 @@
               line-height 72px
               display inline-block
               vertical-align baseline
+              &.small
+                font-size 48px
+              &.very-small
+                font-size 32px
             &:before
               height 0
               width 0

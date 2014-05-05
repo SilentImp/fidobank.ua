@@ -63,8 +63,11 @@
   .options
     display none
     background #FFF
+    font-size 0
+    line-height 0
     position absolute
     top 100%
+    width 100%
     margin-top -2px
     left -2px
     right -2px
@@ -77,12 +80,19 @@
       position absolute
       left -9999px
     .option 
+      line-height 0
+      width 100%
+      box-sizing border-box
+      display block
       font-size 0
       input:checked+label
         color #FFF
         background-color #5E7AA0 
+        box-shadow -5px 0 0 0 #5E7AA0 
         pointer-events none
     label
+      width 100%
+      box-sizing border-box
       display block
       cursor pointer
       line-height 48px
@@ -93,3 +103,4 @@
       &:focus
         color #FFF
         background-color #5E7AA0 
+        box-shadow -5px 0 0 0 #5E7AA0 

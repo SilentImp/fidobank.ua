@@ -14,8 +14,8 @@ define [
       @discreteTime = 100
       @redrawing = false
 
-      @max = 128+@widget.height()-@percent.height()
       @widgetHeight = @widget.height()
+      @max = 256 + @widgetHeight
 
       $(window).on 'scroll', @isVisible
       @isVisible()
@@ -31,7 +31,7 @@ define [
 
     recountPercPos: (percents)=>
       
-      bottom = parseFloat((@max*percents/100)-64,10)
+      bottom = parseFloat((@max*percents/100)-128,10)
       @percent.css
         'bottom': bottom.toString()+'px'
 
@@ -43,7 +43,7 @@ define [
       widgetTop = @widget.offset().top
       widgetBottom = widgetTop+@widgetHeight
 
-      maxHeight = $(window).height() + (@widgetHeight - 96)
+      maxHeight = $(window).height() - 96 + @widgetHeight/2
       part = widgetTop - (docViewTop - (@widgetHeight - 96))
       return 100-Math.min(Math.max(parseFloat(part*100/maxHeight,10),0),100)
 

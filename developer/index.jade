@@ -19,28 +19,28 @@ html(lang="ru")
     
     .calculator-popup
       .wrapper
-        .current.unity-calculator
-          input.summ(type="text", name="loan_size", value="", placeholder="Сумма")
-          .drop-down-selector.small.currency
+        .current.unity-calculator(data-type="unity-calculator")
+          input.summ(id="loan_size_popup", data-linkedto="loan_size", type="text", name="loan_size", value="10000", placeholder="Сумма")
+          .drop-down-selector.small.currency(data-linkedto="loan_currency")
             .current.icon-down-open ГРН
             .options
               .option
-                input(name="loan_currency", id="loan_currency_uah_popup", value="uah", type="radio", checked="checked")
+                input(name="loan_currency_popup", id="loan_currency_uah_popup", value="uah", type="radio", checked="checked")
                 label(for="loan_currency_uah_popup") ГРН
               .option
-                input(name="loan_currency", id="loan_currency_usd_popup", value="usd", type="radio")
+                input(name="loan_currency_popup", id="loan_currency_usd_popup", value="usd", type="radio")
                 label(for="loan_currency_usd_popup") USD
               .option
-                input(name="loan_currency", id="loan_currency_eur_popup", value="eur", type="radio")
+                input(name="loan_currency_popup", id="loan_currency_eur_popup", value="eur", type="radio")
                 label(for="loan_currency_eur_popup") EUR
-          .drop-down-selector.small.term
+          .drop-down-selector.term.small(data-linkedto="loan_term")
             .current.icon-down-open 1 месяц
             .options
               .option
-                input(name="loan_term", id="loan_term_1_popup", value="1", type="radio", checked="checked")
+                input(name="loan_term", id="loan_term_1_popup", value="1", type="radio")
                 label(for="loan_term_1_popup") 1 месяц
               .option
-                input(name="loan_term", id="loan_term_2_popup", value="2", type="radio")
+                input(name="loan_term", id="loan_term_2_popup", value="2", type="radio", checked="checked")
                 label(for="loan_term_2_popup") 2 месяца
               .option
                 input(name="loan_term", id="loan_term_3_popup", value="3", type="radio")
@@ -61,9 +61,9 @@ html(lang="ru")
                 input(name="loan_term", id="loan_term_24_popup", value="24", type="radio")
                 label(for="loan_term_24_popup") 24 месяца
           
-        .double-guarantee-calculator
-          input.summ(name="loan_size", value="", placeholder="Сумма в USD")
-          .drop-down-selector.small.term
+        .double-guarantee-calculator(data-type="double-guarantee-calculator")
+          input.summ(id="loan_size_double_popup", data-linkedto="loan_size_double", name="loan_size", value="10000", placeholder="Сумма в USD")
+          .drop-down-selector.small.term(data-linkedto="loan_term_double")
             .current.icon-down-open 3 месяца
             .options
               .option
@@ -79,8 +79,8 @@ html(lang="ru")
                 input(name="loan_term", id="loan_term_12_double_popup", value="12", type="radio")
                 label(for="loan_term_12_double_popup") 12 месяцев
 
-        .plastic-fantasy-calculator
-          input.summ(name="loan_size", value="", placeholder="Сумма в UAH")
+        .plastic-fantasy-calculator(data-type="plastic-fantasy-calculator")
+          input.summ(id="loan_size_plastic_popup", data-linkedto="loan_size_plastic", name="loan_size", value="10000", placeholder="Сумма в UAH")
 
         section.monitor
           p.percent +24%
@@ -103,10 +103,11 @@ html(lang="ru")
               a.plastic(href="#plastic-fantasy-calculator") Пластик Фантастик
             .tabs
               
-              form.unity-calculator(action="/deposit/", method="post")
+              form.current.unity-calculator(action="/deposit/", method="post", data-type="unity-calculator")
                 fieldset
-                  input.summ(type="text", name="loan_size", value="", placeholder="Сумма")
-                  .drop-down-selector.currency
+                  input.summ(id="loan_size", data-linkedto="loan_size_popup", type="text", name="loan_size", value="10000", placeholder="Cума")
+                  
+                  .drop-down-selector.currency(data-linkedto="loan_currency_popup")
                     .current.icon-down-open ГРН
                     .options
                       .option
@@ -118,7 +119,7 @@ html(lang="ru")
                       .option
                         input(name="loan_currency", id="loan_currency_eur", value="eur", type="radio")
                         label(for="loan_currency_eur") EUR
-                  .drop-down-selector.term
+                  .drop-down-selector.term(data-linkedto="loan_term_popup")
                     .current.icon-down-open 1 месяц
                     .options
                       .option
@@ -146,11 +147,11 @@ html(lang="ru")
                         input(name="loan_term", id="loan_term_24", value="24", type="radio")
                         label(for="loan_term_24") 24 месяца
               
-              form.double-guarantee-calculator(action="/deposit/", method="post")
+              form.double-guarantee-calculator(action="/deposit/", method="post", data-type="double-guarantee-calculator")
                 fieldset
-                  input.summ(name="loan_size", value="", placeholder="Сумма в USD")
+                  input.summ(id="loan_size_double", data-linkedto="loan_size_double_popup", name="loan_size", value="10000", placeholder="Сумма в USD")
 
-                  .drop-down-selector.term
+                  .drop-down-selector.term(data-linkedto="loan_term_double_popup")
                     .current.icon-down-open 3 месяца
                     .options
                       .option
@@ -166,9 +167,9 @@ html(lang="ru")
                         input(name="loan_term", id="loan_term_12_double", value="12", type="radio")
                         label(for="loan_term_12_double") 12 месяцев
 
-              form.plastic-fantasy-calculator(action="/deposit/", method="post")
+              form.plastic-fantasy-calculator(action="/deposit/", method="post", data-type="plastic-fantasy-calculator")
                 fieldset
-                  input.summ(name="loan_size", value="", placeholder="Сумма в UAH")
+                  input.summ(id="loan_size_plastic", data-linkedto="loan_size_plastic_popup", name="loan_size", value="10000", placeholder="Сумма в UAH")
 
               section.monitor
                 p.percent +24%
@@ -191,7 +192,7 @@ html(lang="ru")
             fieldset
               .line
                 input(type="text", placeholder="Укажите Ваше имя", value="", name="person")
-                input(type="text", placeholder="Номер Вашего телефона", value="", name="phone")
+                input(type="text", placeholder="+38 0__ ___ __ __", value="", name="phone")
               button(type="submit") Перезвоните мне
             footer
               p Укажите Свой номер телефона и ФИДОБАНК свяжется с Вами
