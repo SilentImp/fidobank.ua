@@ -10,6 +10,15 @@ define [], ->
       @inputs = @widget.find('input').on 'change', @onChange
       @linked = @widget.attr('data-linkedto')
 
+      @preinit()
+
+    preinit: =>
+      input = @widget.find('input:checked')
+      label = input.next()
+      @current.text(label.text())
+      linkedLabel.prev().trigger(@itype)
+      linkedLabel.prev().trigger('change')
+
     onChange: (event)=>
       input = $ event.currentTarget
       label = input.next()
