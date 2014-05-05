@@ -38,7 +38,7 @@ define [], ->
 
     filterCyrillic: (event)=>
 
-      console.log String.fromCharCode(event.which), event.which
+      # console.log String.fromCharCode(event.which), event.which
 
       notIsLetter = String.fromCharCode(event.which)
       notIsLetter = notIsLetter.match(/[a-zÝÛºÞÜ¼¾À]/i) == null
