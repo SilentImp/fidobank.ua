@@ -1,0 +1,57 @@
+.drop-down-selector
+  position relative
+  box-sizing border-box
+  border 2px solid #b7bbc0
+  height 48px
+  display inline-block
+  vertical-align middle
+  position relative
+  margin-right 32px
+  &.currency
+    width 128px
+  &.term
+    margin-right 0
+    width 224px 
+  .current
+    color #7e8691
+    height 44px
+    font-size 24px
+    line-height 44px
+    padding 0 64px 0 16px
+    cursor default
+  &:hover,
+  &:focus
+    border-color #5e7aa0 
+    .current
+      color #5a7394
+    .options
+      display block
+  .options
+    display none
+    background #FFF
+    position absolute
+    top 100%
+    margin-top -2px
+    left -2px
+    right -2px
+    border 2px solid #5e7aa0
+    border-top-style none
+    z-index 100
+    overflow auto
+    max-height 144px 
+    input
+      position absolute
+      left -9999px
+    input:checked+label
+      display none
+    label
+      display block
+      cursor pointer
+      line-height 48px
+      font-size 24px
+      padding 0 16px
+      color #7E8691
+      &:hover,
+      &:focus
+        color #FFF
+        background-color #5E7AA0 

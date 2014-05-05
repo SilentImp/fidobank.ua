@@ -1,0 +1,134 @@
+.deposit
+  &.deposit-unity 
+    header
+      background url("../images/bg/bg-1.jpg") 50% 100% no-repeat
+      background-size cover
+      .wrapper:after
+        background url("../images/bullet/bullet-1.png") 50% 50% no-repeat
+        background-size contain
+    article section table
+      width 100% 
+      background #f7f7f7 url("../images/bg/table-bg.png") 50% 50% no-repeat
+      background-size 100% auto
+      td,
+      th
+        width 11%
+  &.deposit-double-guarantee 
+    header
+      background url("../images/bg/bg-2.jpg") 50% 100% no-repeat
+      background-size cover
+      .wrapper:after
+        background url("../images/bullet/bullet-2.png") 50% 50% no-repeat
+        background-size contain
+    article section table
+      td,
+      th
+        width 80px
+  &.deposit-plastic-fantasy 
+    header
+      background url("../images/bg/bg-3.jpg") 50% 100% no-repeat
+      background-size cover
+      .wrapper:after
+        background url("../images/bullet/bullet-3.png") 50% 50% no-repeat
+        background-size contain
+    article section table
+      td,
+      th
+        width 160px
+  header
+    height 325px
+    line-height 325px
+    position relative
+    margin-bottom 48px
+    .percent
+      pointer-events none
+      position absolute
+      right 0
+      color #FFF
+      color rgba(255, 255, 255,.1)
+      font-size 240px
+      line-height 256px 
+      bottom -64px
+      z-index 2
+    .wrapper
+      z-index 4
+      display inline-block
+      vertical-align middle
+      max-width 1024px
+      margin 0 auto
+      padding 0 32px 0 240px
+      &:after
+        content "."
+        display block
+        height 160px
+        width 160px
+        overflow hidden
+        text-indent -9999px
+        position absolute
+        top 42px
+        left 32px
+      p
+        color #E7E7E7
+        font-size 14px
+        line-height 16px
+        max-width 624px 
+        margin 16px 0
+      .title
+        font-family 'Plumb-Medium'
+        font-size 48px
+        line-height 64px
+        color #C0D0E3 
+        margin 0 0 16px 
+      .sub-title
+        color #E7E7E7
+        font-size 24px
+        line-height 32px 
+  article
+    max-width 1024px
+    margin 0 auto
+    padding 0 32px 0 208px
+    counter-reset level1
+    section
+      counter-increment level1
+      color #595959
+      position relative
+      margin 32px 0
+      border-left 2px solid #b7bbc0
+      padding 0 0 0 20px 
+      font-size 14px
+      line-height 16px
+      &:before
+        font-size 48px
+        content counter(level1)
+        width 72px
+        height 72px
+        border-radius 100%
+        position absolute
+        top 0
+        left -90px
+        background-color #808285
+        color #fff
+        text-align center
+        line-height 72px  
+      table
+        text-align center
+        border 2px solid #b7bbc0
+        line-height 32px
+        border-collapse collapse
+        background-color #f7f7f7 
+        td,
+        th
+          white-space nowrap
+          border 1px solid #b7bbc0
+      ul
+        list-style disc
+        max-width 624px
+        margin-left 16px
+      p
+        max-width 624px 
+      .title
+        font-size 24px
+        line-height 32px
+        margin-bottom 16px
+      
+    

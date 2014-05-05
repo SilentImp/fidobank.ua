@@ -1,0 +1,187 @@
+.calculator  
+  background url("../images/bg/header-bg.jpg") 50% 0 no-repeat
+  background-size cover
+  background-attachment fixed
+  position relative
+  .outer-wraper
+    width 100%
+    height 100%
+    background url("../images/bg/grid.png") 0 0 repeat
+    background-attachment fixed
+    overflow hidden
+    .inner-wraper
+      min-height 720px
+      width 672px
+      margin 80px auto 0
+      .slogan
+        color #FFF
+        font-size 48px
+        line-height 48px
+        font-family 'Plumb-Medium'
+      .calculator-forms
+        margin 48px 0 0 
+        background-color #FFF
+        white-space nowrap
+        font-size 0
+        .tab-navigation
+          height 64px
+          line-height 64px
+          white-space nowrap
+          color #00316F
+          background-color #eee
+          &:first-child
+            border-left-style none
+          a
+            font-size 24px
+            text-decoration none
+            color #00316F
+            display inline-block
+            overflow hidden
+            position relative
+            text-overflow ellipsis
+            text-align center
+            &:hover,
+            &:focus,
+            &.current
+              background-color #FFF
+              color #262626  
+            &.unity
+              width 160px
+            &.double,
+            &.plastic
+              width 254px
+              border-left 1px solid #fff
+        .tabs
+          overflow hidden
+          width 100%
+          position relative  
+        form
+          white-space normal
+          display inline-block
+          vertical-align top
+          padding 32px
+          width 608px
+          input
+            outline none
+            border 2px solid #b7bbc0
+            color #7e8691
+            font-size 24px  
+            line-height 28px
+            padding 8px 16px 
+            height 48px
+            vertical-align middle
+            display inline-block
+            box-sizing border-box
+            margin-right 32px
+            &.summ
+              width 192px
+              text-align right
+            &:hover,
+            &:focus
+              color #5a7394
+              border-color #5e7aa0 
+        .monitor
+          white-space normal
+          padding 0 32px
+          height 72px
+          .details
+            float right
+            line-height 72px
+            height 72px
+            font-size 24px
+            color #FFF
+            background-color #3177CD
+            overflow hidden
+            padding 0 40px
+            border-radius 3px
+            text-decoration none
+            &:active
+              padding-top 4px
+              height 68px 
+            &:hover,
+            &:focus
+              background-color #1a64c0     
+          .percent 
+            width 72px
+            height 72px
+            border-radius 100%
+            background-color #5a7394
+            color #FFF
+            text-align center
+            font-size 24px
+            line-height 72px
+            margin 0 20px 0 0 
+            float left
+          .summ
+            height 72px
+            line-height 72px
+            border-left 2px solid #b7bbc0
+            padding 0 0 0 20px 
+            font-family 'Plumb-Bold'
+            position relative
+            float left
+            color #5a7394
+            width 270px
+            .currency
+              font-size 24px
+              vertical-align baseline
+            b
+              font-size 64px
+              line-height 72px
+              display inline-block
+              vertical-align baseline
+            &:before
+              height 0
+              width 0
+              overflow hidden
+              font-size 0
+              line-height 0
+              content "."
+              text-indent -9999px
+              display block
+              position absolute
+              left 0
+              top 50%
+              margin -6px 0 0
+              border-color transparent transparent transparent #b7bbc0
+              border-style solid none solid solid
+              border-width 6px 0 6px 6px
+            &:after
+              height 0
+              width 0
+              overflow hidden
+              font-size 0
+              line-height 0
+              content "."
+              text-indent -9999px
+              display block
+              position absolute
+              left -3px
+              top 50%
+              margin -6px 0 0
+              border-color transparent transparent transparent #fff
+              border-style solid none solid solid
+              border-width 6px 0 6px 6px
+              
+        footer
+          white-space normal
+          padding 0 32px 16px
+          line-height 48px
+          height 48px
+          p
+            color #00316F
+            font-size 14px
+            float left
+          .social
+            float right 
+            font-size 14px
+            a
+              display inline-block
+              width 24px
+              text-decoration none
+              text-align center
+              color #424D51
+              &:hover
+                color #639edc  
+          
+          
