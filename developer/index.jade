@@ -21,20 +21,20 @@ html(lang="ru")
       .wrapper
         
         form.current.unity-calculator(data-type="unity-calculator", action="/", method="post")
-          input.summ(id="loan_size_popup", data-linkedto="loan_size", type="text", name="loan_size", value="10000", placeholder="Сумма")
-          .drop-down-selector.small.currency(data-linkedto="loan_currency")
+          input.summ(type="text", name="loan_size", value="10000", placeholder="Сумма")
+          .drop-down-selector.small.currency
             .current.icon-down-open ГРН
             .options
               .option
-                input(name="loan_currency_popup", id="loan_currency_uah_popup", value="uah", type="radio", checked="checked")
+                input(name="loan_currency", id="loan_currency_uah_popup", value="uah", type="radio", checked="checked")
                 label(for="loan_currency_uah_popup") ГРН
               .option
-                input(name="loan_currency_popup", id="loan_currency_usd_popup", value="usd", type="radio")
+                input(name="loan_currency", id="loan_currency_usd_popup", value="usd", type="radio")
                 label(for="loan_currency_usd_popup") USD
               .option
-                input(name="loan_currency_popup", id="loan_currency_eur_popup", value="eur", type="radio")
+                input(name="loan_currency", id="loan_currency_eur_popup", value="eur", type="radio")
                 label(for="loan_currency_eur_popup") EUR
-          .drop-down-selector.term.small(data-linkedto="loan_term")
+          .drop-down-selector.term.small
             .current.icon-down-open 1 месяц
             .options
               .option
@@ -63,8 +63,8 @@ html(lang="ru")
                 label(for="loan_term_24_popup") 24 месяца
           
         form.double-guarantee-calculator(data-type="double-guarantee-calculator", action="/", method="post")
-          input.summ(id="loan_size_double_popup", data-linkedto="loan_size_double", name="loan_size", value="10000", placeholder="Сумма в USD")
-          .drop-down-selector.small.term(data-linkedto="loan_term_double")
+          input.summ(name="loan_size", value="10000", placeholder="Сумма в USD")
+          .drop-down-selector.small.term
             .current.icon-down-open 3 месяца
             .options
               .option
@@ -81,7 +81,7 @@ html(lang="ru")
                 label(for="loan_term_12_double_popup") 12 месяцев
 
         form.plastic-fantasy-calculator(data-type="plastic-fantasy-calculator", action="/", method="post")
-          input.summ(id="loan_size_plastic_popup", data-linkedto="loan_size_plastic", name="loan_size", value="10000", placeholder="Сумма в UAH")
+          input.summ(name="loan_size", value="10000", placeholder="Сумма в UAH")
 
         section.monitor
           p.percent +24%
@@ -106,9 +106,9 @@ html(lang="ru")
               
               form.current.unity-calculator(action="/deposit/", method="post", data-type="unity-calculator")
                 fieldset
-                  input.summ(id="loan_size", data-linkedto="loan_size_popup", type="text", name="loan_size", value="10000", placeholder="Cума")
+                  input.summ(type="text", name="loan_size", value="10000", placeholder="Cума")
                   
-                  .drop-down-selector.currency(data-linkedto="loan_currency_popup")
+                  .drop-down-selector.currency
                     .current.icon-down-open ГРН
                     .options
                       .option
@@ -120,7 +120,7 @@ html(lang="ru")
                       .option
                         input(name="loan_currency", id="loan_currency_eur", value="eur", type="radio")
                         label(for="loan_currency_eur") EUR
-                  .drop-down-selector.term(data-linkedto="loan_term_popup")
+                  .drop-down-selector.term
                     .current.icon-down-open 1 месяц
                     .options
                       .option
@@ -150,9 +150,9 @@ html(lang="ru")
               
               form.double-guarantee-calculator(action="/deposit/", method="post", data-type="double-guarantee-calculator")
                 fieldset
-                  input.summ(id="loan_size_double", data-linkedto="loan_size_double_popup", name="loan_size", value="10000", placeholder="Сумма в USD")
+                  input.summ(name="loan_size", value="10000", placeholder="Сумма в USD")
 
-                  .drop-down-selector.term(data-linkedto="loan_term_double_popup")
+                  .drop-down-selector.term
                     .current.icon-down-open 3 месяца
                     .options
                       .option
@@ -170,7 +170,7 @@ html(lang="ru")
 
               form.plastic-fantasy-calculator(action="/deposit/", method="post", data-type="plastic-fantasy-calculator")
                 fieldset
-                  input.summ(id="loan_size_plastic", data-linkedto="loan_size_plastic_popup", name="loan_size", value="10000", placeholder="Сумма в UAH")
+                  input.summ(name="loan_size", value="10000", placeholder="Сумма в UAH")
 
               section.monitor
                 p.percent +24%

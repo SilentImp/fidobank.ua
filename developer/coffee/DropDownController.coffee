@@ -16,18 +16,16 @@ define [], ->
       input = @widget.find('input:checked')
       label = input.next()
       @current.text(label.text())
-      linkedLabel.prev().trigger(@itype)
-      linkedLabel.prev().trigger('change')
 
     onChange: (event)=>
       input = $ event.currentTarget
       label = input.next()
       @current.text(label.text())
-      linkedLabel = $('input[name='+@linked+']:not(:checked)+label:contains("'+label.text()+'")')
-      if linkedLabel.length == 0
-        return
+      # linkedLabel = $('input[name='+@linked+']:not(:checked)+label:contains("'+label.text()+'")')
+      # if linkedLabel.length == 0
+      #   return
       
-      linkedLabel.prev().trigger(@itype)
-      linkedLabel.prev().trigger('change')
+      # linkedLabel.prev().trigger(@itype)
+      # linkedLabel.prev().trigger('change')
 
   return DropDownController

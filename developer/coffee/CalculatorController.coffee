@@ -19,6 +19,7 @@ define [
       @tabs = @mainCalculator.find '.tabs'
       @tabNav = @mainCalculator.find '.tab-navigation'
       @upButton = $ '.back-to-top'
+      
       @popup = $ '.calculator-popup'
       @popupContent = @popup.find '.wrapper'
       @detailsButton = @tabs.find '.monitor .details'
@@ -37,6 +38,9 @@ define [
       @summ = $ 'input.summ'
       @summ.on 'keyup', @syncSumm
 
+      @ddi = $ '.drop-down-selector input'
+      @ddi.on 'change', @syncDropDowns
+
       @popup.find('input').on 'change', @recountForm
       @tabs.find('input').on 'change', @recountForm
 
@@ -50,6 +54,29 @@ define [
       $(window).on 'scroll', @isCalculatorVisible
       @isCalculatorVisible()
       @recountForm()
+
+    syncDropDowns: (event)=>
+      input = $ event.currentTarget
+      name = input.attr('name')
+      form = input.parents('form')
+      type = form.attr('data-type')
+
+      @current.find('[name='+name+'][value='+input.val()+']:not(:checked)').trigger(@itype)
+      @popup.find('.'+type+' input[name='+name+'][value='+input.val()+']:not(:checked)').trigger(@itype)
+
+
+    syncSumm: (event)=>
+      input = $ event.currentTarget
+      name = input.attr('name')
+      form = input.parents('form')
+      type = form.attr('data-type')
+      
+      linked = @current.find('[name='+name+']')
+      if linked.val()!=input.val()
+        linked.val(input.val())
+      linked = @popup.find('.'+type+' input[name='+name+']')
+      if linked.val()!=input.val()
+        linked.val(input.val())
 
     recountForm: ()=>
 
@@ -204,15 +231,6 @@ define [
 
         @calcMonitorSumm.html(result.toString())
         @popupMonitorSumm.html(result.toString())
-
-
-
-
-    syncSumm: (event)=>
-      input = $ event.currentTarget
-      link = $ '#'+input.attr('data-linkedto')
-      # input.val(input.val().replace(/[^\d]/ig,""))
-      # link.val(input.val())
 
     scrollTop: (event)=>
       event.preventDefault()
