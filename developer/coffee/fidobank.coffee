@@ -2,14 +2,16 @@ requirejs [
     "modernizr/modernizr",
     "requestAnimationFramePolyfill",
     "jquery/dist/jquery.min",
+    "iscroll/build/iscroll-lite",
     "CalculatorController",
     "ParallaxController",
     "DropDownController",
     "CallBackController"
   ], (
-    moderniz, 
-    poly, 
-    jq, 
+    dummy1, 
+    dummy2, 
+    dummy3, 
+    dummy4,
     CalculatorController, 
     ParallaxController, 
     DropDownController,
@@ -22,3 +24,6 @@ requirejs [
       new ParallaxController(parallax)
     for dropdown in $('.drop-down-selector')
       new DropDownController(dropdown)
+
+    # if Modernizr.touch
+    # new IScroll('html');

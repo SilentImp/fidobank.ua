@@ -18,6 +18,7 @@ define [
       @max = 256 + @widgetHeight
 
       $(window).on 'scroll', @isVisible
+      $(window).on 'scrolled', @isVisible
       
       # if Modernizr.touch
       #   $(window).on 'touchmove', @isVisible

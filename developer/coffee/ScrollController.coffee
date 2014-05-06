@@ -43,6 +43,7 @@ define [], ()->
       if not @renderScroll()
         @scrolling = false
         @html.classList.remove 'scrolling'
+        $(window).trigger 'scrolled'
         return
       
       requestAnimationFrame @animationLoop

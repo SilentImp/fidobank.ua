@@ -65,6 +65,8 @@ define [
       @isCalculatorVisible()
       @recountForm()
 
+      $(window).on 'scrolled', @isCalculatorVisible
+
       $('form:not(.callback-form)').on 'submit', (event)=>
         event.preventDefault()
         @recountForm()
