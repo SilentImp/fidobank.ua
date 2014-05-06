@@ -10,8 +10,6 @@ html(lang="ru")
     script(src="js/requirejs/require.js", data-main="js/fidobank.js")
     title Фідобанк
   body
-    .fixed-bg-container
-
     header
       .wrapper
         h1.logotype FidoBank
@@ -22,7 +20,7 @@ html(lang="ru")
 
     .calculator-popup
       .wrapper
-        
+
         form.current.unity-calculator(data-type="unity-calculator", action="/", method="post")
           input.summ(autocomplete="off", maxlength="8", type="text", name="loan_size", value="10000", placeholder="Сумма")
           .drop-down-selector.small.currency
@@ -204,7 +202,6 @@ html(lang="ru")
                 a.fb.icon-facebook(href="#")
                 a.tw.icon-twitter-bird(href="#")
                 a.gp.icon-googleplus-rect(href="#")
-
 
     section.deposit.deposit-unity
       header

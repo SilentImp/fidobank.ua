@@ -19,9 +19,9 @@ define [
 
       $(window).on 'scroll', @isVisible
       
-      if Modernizr.touch
-        $(window).on 'touchmove', @isVisible
-        $(window).on 'touchmove', @redrawForIpad
+      # if Modernizr.touch
+      #   $(window).on 'touchmove', @isVisible
+      #   $(window).on 'touchmove', @redrawForIpad
 
       @isVisible()
 

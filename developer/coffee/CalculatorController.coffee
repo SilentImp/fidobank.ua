@@ -58,8 +58,8 @@ define [
 
       @current = @tabs.find '>.current'
 
-      if Modernizr.touch
-        $(window).on 'touchmove', @isCalculatorVisible
+      # if Modernizr.touch
+      #   $(window).on 'touchmove', @isCalculatorVisible
 
       $(window).on 'scroll', @isCalculatorVisible
       @isCalculatorVisible()
