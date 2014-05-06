@@ -13,8 +13,8 @@ define [
       @tel = @widget.find 'input[name=phone]'
       @name = @widget.find 'input[name=person]'
 
-      $.mask.definitions['Y']='[а-яА-ЯёЁ]';
-      $.mask.definitions['X']='[а-яА-ЯёЁ ]';
+      $.mask.definitions['Y']='[а-яА-ЯёЁіІєЄїЇ]';
+      $.mask.definitions['X']='[а-яА-ЯёЁіІєЄїЇ ]';
       @tel.mask "+38 099 999 99 99"
       @name.mask "YX?XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",{placeholder:""}
 
