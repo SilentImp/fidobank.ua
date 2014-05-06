@@ -60,6 +60,10 @@ define [
       @isCalculatorVisible()
       @recountForm()
 
+      $('form:not(.callback-form)').on 'submit', (event)=>
+        event.preventDefault()
+        @recountForm()
+
 
     syncDropDowns: (event)=>
       input = $ event.currentTarget
@@ -269,7 +273,7 @@ define [
       
       element = @tabs.find('.'+target)
       @tabs.find('>.current').removeClass 'current'
-      @tabs.find('>.'+target).addClass 'current'
+      @tabs.find('>.'+target).addClass 'current'  
 
       @popupContent.find('>.current').removeClass 'current'
       @popupContent.find('>.'+target).addClass 'current'
