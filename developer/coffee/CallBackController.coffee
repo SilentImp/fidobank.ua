@@ -27,7 +27,7 @@ define [
         "phone": @tel.val()
       )
       @widget[0].reset()
-
+      @widget.find('.message').hide()
       @widget.find('.ready-to-send').hide()
       @widget.find('.message-was-send').show()
 

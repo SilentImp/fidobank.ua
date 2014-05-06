@@ -59,16 +59,23 @@ html(lang="ru")
                   a.gp.icon-googleplus-rect(href="#")
           
           form.callback-form(action="/callback/", method="post")
-            header
-              h3.title Потрібна професійна консультація по депозиту?
-              a.back-to-calculator.icon-calc(href="#")
-            fieldset
-              .line
-                input(autocomplete="off", type="text", placeholder="Твоє ім'я", value="", name="person")
-                input(autocomplete="off", maxlength="17", type="text", placeholder="+38 0__ ___ __ __", value="", name="phone")
-              button(type="submit") Замовити дзвінок
+            .ready-to-send
+              header
+                h3.title Потрібна професійна консультація по депозиту?
+                a.back-to-calculator.icon-calc(href="#")
+              fieldset
+                .line
+                  input(required="required", autocomplete="off", type="text", placeholder="Твоє ім'я", value="", name="person")
+                  input(required="required", autocomplete="off", maxlength="17", type="text", placeholder="+38 0__ ___ __ __", value="", name="phone")
+                button(type="submit") Замовити дзвінок
+            .message-was-send
+              header
+                h3.title Дякуємо, заявку прийнято в роботу.
+                a.back-to-calculator.icon-calc(href="#")
+              fieldset
+                p Контакт-центр ФІДОБАНКу зв'яжеться з тобою протягом 20 хвилин для уточнення деталей
             footer
-              p Вкажи свої данні, Контакт-центр ФІДОБАНКу зв’яжеться з тобою протягом 20 хвилин
+              p.message Вкажи свої данні, Контакт-центр ФІДОБАНКу зв’яжеться з тобою протягом 20 хвилин
               nav.social
                 a.fb.icon-facebook(href="#")
                 a.tw.icon-twitter-bird(href="#")

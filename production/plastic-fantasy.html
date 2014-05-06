@@ -60,19 +60,30 @@
                     </div>
                 </div>
                 <form action="/callback/" method="post" class="callback-form">
-                    <header>
-                        <h3 class="title">Потрібна професійна консультація по депозиту?</h3>
-                        <a href="#" class="back-to-calculator icon-calc"></a>
-                    </header>
-                    <fieldset>
-                        <div class="line">
-                            <input autocomplete="off" type="text" placeholder="Твоє ім'я" value="" name="person">
-                            <input autocomplete="off" maxlength="17" type="text" placeholder="+38 0__ ___ __ __" value="" name="phone">
-                        </div>
-                        <button type="submit">Замовити дзвінок</button>
-                    </fieldset>
+                    <div class="ready-to-send">
+                        <header>
+                            <h3 class="title">Потрібна професійна консультація по депозиту?</h3>
+                            <a href="#" class="back-to-calculator icon-calc"></a>
+                        </header>
+                        <fieldset>
+                            <div class="line">
+                                <input required="required" autocomplete="off" type="text" placeholder="Твоє ім'я" value="" name="person">
+                                <input required="required" autocomplete="off" maxlength="17" type="text" placeholder="+38 0__ ___ __ __" value="" name="phone">
+                            </div>
+                            <button type="submit">Замовити дзвінок</button>
+                        </fieldset>
+                    </div>
+                    <div class="message-was-send">
+                        <header>
+                            <h3 class="title">Дякуємо, заявку прийнято в роботу.</h3>
+                            <a href="#" class="back-to-calculator icon-calc"></a>
+                        </header>
+                        <fieldset>
+                            <p>Контакт-центр ФІДОБАНКу зв'яжеться з тобою протягом 20 хвилин для уточнення деталей</p>
+                        </fieldset>
+                    </div>
                     <footer>
-                        <p>Вкажи свої данні, Контакт-центр ФІДОБАНКу зв’яжеться з тобою протягом 20 хвилин</p>
+                        <p class="message">Вкажи свої данні, Контакт-центр ФІДОБАНКу зв’яжеться з тобою протягом 20 хвилин</p>
                         <nav class="social">
                             <a href="#" class="fb icon-facebook"></a>
                             <a href="#" class="tw icon-twitter-bird"></a>
