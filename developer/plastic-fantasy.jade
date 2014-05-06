@@ -1,0 +1,120 @@
+doctype html
+html(lang="ru")
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge,chrome=1")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(name="author", content="Anton Nemtsev, @silentimp, skype: ravencry")
+    link(rel="stylesheet", href="css/styles.css")
+    script(src="js/requirejs/require.js", data-main="js/fidobank.js")
+    title Депозит «Пластик Фантастик»  | Фідобанк
+  body
+    header
+      .wrapper
+        h1.logotype FidoBank
+        section.contacts
+          h2.title Ответы на вопросы
+          a(href="tel:+380800307676") 0 800 30 76 76
+            span Безкоштовно зі стаціонарних та мобільних телефонів в Україні
+    
+    .calculator-popup
+      .wrapper
+        
+        form.current.plastic-fantasy-calculator(data-type="plastic-fantasy-calculator", action="/", method="post")
+          input.summ(autocomplete="off", maxlength="8", name="loan_size", value="10000", placeholder="Сумма в UAH")
+
+        section.monitor
+          p.percent +24%
+          p.summ
+            b 12800
+            span.currency ГРН
+          a.details(href="#") Докладніше
+
+    a.back-to-top.icon-up-open(href="#")
+
+    section.calculator
+      .outer-wraper
+        .inner-wraper
+          h2.slogan Оформити депозит тепер набагато легше!
+          
+          .calculator-forms
+            .tabs
+
+              form.current.plastic-fantasy-calculator(action="/deposit/", method="post", data-type="plastic-fantasy-calculator")
+                fieldset
+                  input.summ(autocomplete="off", maxlength="8", name="loan_size", value="10000", placeholder="Сумма в UAH")
+
+              section.monitor
+                p.percent +24%
+                p.summ
+                  b 12800
+                  span.currency ГРН
+                a.details(href="#") Докладніше
+                
+              footer
+                p * Подробнее о депозите “Еднисть”
+                nav.social
+                  a.fb.icon-facebook(href="#")
+                  a.tw.icon-twitter-bird(href="#")
+                  a.gp.icon-googleplus-rect(href="#")
+          
+          form.callback-form(action="/callback/", method="post")
+            header
+              h3.title Потрібна професійна консультація по депозиту?
+              a.back-to-calculator.icon-calc(href="#")
+            fieldset
+              .line
+                input(autocomplete="off", type="text", placeholder="Твоє ім'я", value="", name="person")
+                input(autocomplete="off", maxlength="17", type="text", placeholder="+38 0__ ___ __ __", value="", name="phone")
+              button(type="submit") Замовити дзвінок
+            footer
+              p Вкажи свої данні, Контакт-центр ФІДОБАНКу зв’яжеться з тобою протягом 20 хвилин
+              nav.social
+                a.fb.icon-facebook(href="#")
+                a.tw.icon-twitter-bird(href="#")
+                a.gp.icon-googleplus-rect(href="#")
+
+    section.deposit.deposit-plastic-fantasy
+      header
+        .wrapper
+          h2.title Депозит «Пластик Фантастик»
+          p Накопичувальна карта «Пластик-Фантастик» – пропозиція ФІДОБАНКа, яка забезпечує клієнту вільний доступ до заощаджень та дозволяє отримати 20% річних у гривні на залишок на картковому рахунку. Цей продукт для людей, які хочуть цілодобово контролювати свої заощадження, самостійно керувати своїми витратами та отримувати максимальный дохід від розміщення своїх грошей навіть на дуже короткий період.
+          h3.sub-title Як це працює?
+        .percent +20%
+
+      article
+        section
+          h3.title Це працює так:
+          p За допомогою безкоштовної картки миттєвого випуску платіжної системи MasterCard ви можете розраховуватися коштами з ощадного рахунку в торгово-сервісній мережі і знімати в банкоматах саме тоді, коли вам це потрібно. Доступна також іменна карта з чіпом більш високого класу Mastercard Debit Standard з вартістю випуску 100 грн. При цьому ощадний рахунок можна поповнювати без комісії на будь-яку суму у відділеннях ФІДОБАНКа і терміналах самообслуговування.
+        
+        section
+          h3.title Умови та особливості депозиту «Подвійна гарантiя»:
+          ul
+            li валюта: UAH;
+            li доступні терміни вкладу: без обмежень;
+            li поповнення рахунку: без обмежень по сумі. Поповнення без комісії - безготівковими переказами з рахунків в інших банках, готівкою у відділеннях ФІДОБАНКа;
+            li максимальная сума: не обмежено;
+            li незнижувана сума: відсутня;
+            li нарахування відсотків: щодня на середньоденні залишки по картковому рахунку;
+            li виплата відсотків: щомісяця на картковий рахунок шляхом приєднання відсотків до суми залишку;
+            li процентні ставки: 20% річних у гривні (на суму понад 1000 грн), 8% річних (на суму до 1000 грн);
+            li клас платіжної картки для доступу до засобів: MasterCard Instant (неіменна миттєвого випуску, з магнітною смугою, безкоштовна) або MasterCard Debit Standard (іменна, чіпова, з платою за випуск);
+            li ліміти: 2000 грн на день (незмінний протягом строку дії картки), добовий ліміт на суму покупок - до 10 000 грн (може бути змінений клієнтом);
+            li додаткові безкоштовні сервіси: СМС-інформування, управління коштами через інтернет-банкінг.
+
+        section
+          h3.title Процентна ставка:
+          table
+            thead
+              tr
+                th до 1000 грн
+                th понад 1000 грн
+            tbody
+              tr
+                td 8%
+                td 20%
+
+    footer
+      p ПуАТ «ФІДОБАНК». Банківські послуги. 
+      p Ліцензія НБУ № 4 від 13.07.2012 р. 
+      p Генеральна ліцензія НБУ № 4-3 від 28.10.2013 р.

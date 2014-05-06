@@ -1,0 +1,229 @@
+doctype html
+html(lang="ru")
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge,chrome=1")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(name="author", content="Anton Nemtsev, @silentimp, skype: ravencry")
+    link(rel="stylesheet", href="css/styles.css")
+    script(src="js/requirejs/require.js", data-main="js/fidobank.js")
+    title Депозит «Єдність» | Фідобанк
+  body
+    header
+      .wrapper
+        h1.logotype FidoBank
+        section.contacts
+          h2.title Ответы на вопросы
+          a(href="tel:+380800307676") 0 800 30 76 76
+            span Безкоштовно зі стаціонарних та мобільних телефонів в Україні
+    
+    .calculator-popup
+      .wrapper
+        
+        form.current.unity-calculator(data-type="unity-calculator", action="/", method="post")
+          input.summ(autocomplete="off", maxlength="8", type="text", name="loan_size", value="10000", placeholder="Сумма")
+          .drop-down-selector.small.currency
+            .current.icon-down-open ГРН
+            .options
+              .option
+                input(name="loan_currency", id="loan_currency_uah_popup", value="uah", type="radio", checked="checked")
+                label(for="loan_currency_uah_popup") ГРН
+              .option
+                input(name="loan_currency", id="loan_currency_usd_popup", value="usd", type="radio")
+                label(for="loan_currency_usd_popup") USD
+              .option
+                input(name="loan_currency", id="loan_currency_eur_popup", value="eur", type="radio")
+                label(for="loan_currency_eur_popup") EUR
+          .drop-down-selector.term.small
+            .current.icon-down-open 1 месяц
+            .options
+              .option
+                input(name="loan_term", id="loan_term_1_popup", value="1", type="radio", checked="checked")
+                label(for="loan_term_1_popup") 1 месяц
+              .option
+                input(name="loan_term", id="loan_term_2_popup", value="2", type="radio")
+                label(for="loan_term_2_popup") 2 месяца
+              .option
+                input(name="loan_term", id="loan_term_3_popup", value="3", type="radio")
+                label(for="loan_term_3_popup") 3 месяца
+              .option
+                input(name="loan_term", id="loan_term_6_popup", value="6", type="radio")
+                label(for="loan_term_6_popup") 6 месяцев
+              .option
+                input(name="loan_term", id="loan_term_9_popup", value="9", type="radio")
+                label(for="loan_term_9_popup") 9 месяцев
+              .option
+                input(name="loan_term", id="loan_term_12_popup", value="12", type="radio")
+                label(for="loan_term_12_popup") 370 дней
+              .option
+                input(name="loan_term", id="loan_term_18_popup", value="18", type="radio")
+                label(for="loan_term_18_popup") 18 месяцев
+              .option
+                input(name="loan_term", id="loan_term_24_popup", value="24", type="radio")
+                label(for="loan_term_24_popup") 24 месяца
+          
+        section.monitor
+          p.percent +24%
+          p.summ
+            b 12800
+            span.currency ГРН
+          a.details(href="#") Докладніше
+
+    a.back-to-top.icon-up-open(href="#")
+
+    section.calculator
+      .outer-wraper
+        .inner-wraper
+          h2.slogan Оформити депозит тепер набагато легше!
+          
+          .calculator-forms
+
+            .tabs
+              
+              form.current.unity-calculator(action="/deposit/", method="post", data-type="unity-calculator")
+                fieldset
+                  input.summ(autocomplete="off", maxlength="8", type="text", name="loan_size", value="10000", placeholder="Cума")
+                  
+                  .drop-down-selector.currency
+                    .current.icon-down-open ГРН
+                    .options
+                      .option
+                        input(name="loan_currency", id="loan_currency_uah", value="uah", type="radio", checked="checked")
+                        label(for="loan_currency_uah") ГРН
+                      .option
+                        input(name="loan_currency", id="loan_currency_usd", value="usd", type="radio")
+                        label(for="loan_currency_usd") USD
+                      .option
+                        input(name="loan_currency", id="loan_currency_eur", value="eur", type="radio")
+                        label(for="loan_currency_eur") EUR
+                  .drop-down-selector.term
+                    .current.icon-down-open 1 месяц
+                    .options
+                      .option
+                        input(name="loan_term", id="loan_term_1", value="1", type="radio", checked="checked")
+                        label(for="loan_term_1") 1 месяц
+                      .option
+                        input(name="loan_term", id="loan_term_2", value="2", type="radio")
+                        label(for="loan_term_2") 2 месяца
+                      .option
+                        input(name="loan_term", id="loan_term_3", value="3", type="radio")
+                        label(for="loan_term_3") 3 месяца
+                      .option
+                        input(name="loan_term", id="loan_term_6", value="6", type="radio")
+                        label(for="loan_term_6") 6 месяцев
+                      .option
+                        input(name="loan_term", id="loan_term_9", value="9", type="radio")
+                        label(for="loan_term_9") 9 месяцев
+                      .option
+                        input(name="loan_term", id="loan_term_12", value="12", type="radio")
+                        label(for="loan_term_12") 370 дней
+                      .option
+                        input(name="loan_term", id="loan_term_18", value="18", type="radio")
+                        label(for="loan_term_18") 18 месяцев
+                      .option
+                        input(name="loan_term", id="loan_term_24", value="24", type="radio")
+                        label(for="loan_term_24") 24 месяца
+              
+              section.monitor
+                p.percent +24%
+                p.summ
+                  b 12800
+                  span.currency ГРН
+                a.details(href="#") Докладніше
+                
+              footer
+                p * Подробнее о депозите “Еднисть”
+                nav.social
+                  a.fb.icon-facebook(href="#")
+                  a.tw.icon-twitter-bird(href="#")
+                  a.gp.icon-googleplus-rect(href="#")
+          
+          form.callback-form(action="/callback/", method="post")
+            header
+              h3.title Потрібна професійна консультація по депозиту?
+              a.back-to-calculator.icon-calc(href="#")
+            fieldset
+              .line
+                input(autocomplete="off", type="text", placeholder="Твоє ім'я", value="", name="person")
+                input(autocomplete="off", maxlength="17", type="text", placeholder="+38 0__ ___ __ __", value="", name="phone")
+              button(type="submit") Замовити дзвінок
+            footer
+              p Вкажи свої данні, Контакт-центр ФІДОБАНКу зв’яжеться з тобою протягом 20 хвилин
+              nav.social
+                a.fb.icon-facebook(href="#")
+                a.tw.icon-twitter-bird(href="#")
+                a.gp.icon-googleplus-rect(href="#")
+
+
+    section.deposit.deposit-unity
+      header
+        .wrapper
+          h2.title Депозит «Єдність»
+          p Строковий вклад для клієнтів – фізичних осіб, що дозволяє примножити свої заощадження і в той же час здійснити реальну підтримку Збройним силам України. Банк пропонує клієнту отримати прибуток до 24% річних у гривнях, 12% річних у доларах США і 11% річних в євро, при цьому ще плюс 1% річних від суми вкладу перерахувати на підтримку української армії.
+          h3.sub-title Як це працює?
+        .percent +24%
+      
+      article
+        section
+          h3.title Це працює так:
+          p При відкритті клієнтом депозиту «Єдність» в будь-якій валюті ФІДОБАНК направляє 1% річних від суми вкладу в гривневому еквіваленті на рахунок Міністерства оборони України. Розглянемо такий приклад: ви відкриваєте вклад «Єдність» на суму 10 000 грн на 3 місяці. Процентна ставка для вас буде на рівні 24% річних, тобто після закінчення терміну ви отримаєте близько 600 грн доходу. Для української армії ставка становить 1% річних від суми депозиту, тобто для тримісячного вкладу дохід складе близько 25 грн. Перерахування коштів на рахунок Міністерства оборони України здійснюється на щомісячній основі
+
+        section
+          h3.title Умови та особливості депозиту «Єдність»:
+          ul
+            li процентні ставки – до 24% річних в гривні, 12% річних в доларах США і 11% річних в євро; з урахуванням діючих програм лояльності – до 26% річних у гривні, до 13% річних – у доларах США, до 12% річних – в євро;
+            li доступні терміни вкладу – 1, 2, 3, 6, 9 місяців, 370 днів, 18, 24 місяці;
+            li мінімальна сума вкладу – 500 грн, 100 доларів США або 100 євро, максимальна сума не обмежена;
+            li нарахування відсотків – щоденно;
+            li виплата відсотків – щомісячно.
+
+        section
+          h3.title Процентна ставка:
+          table
+            thead
+              tr
+                th валюта
+                th 1 місяць
+                th 2 місяці
+                th 3 місяці
+                th 6 місяців
+                th 9 місяців
+                th 370 днів
+                th 18 місяців
+                th 24 місяці
+            tbody
+              tr
+                td UAH
+                td 24%
+                td 24%
+                td 25%
+                td 19%
+                td 19,5%
+                td 19,5%
+                td 19%
+                td 19%
+              tr
+                td USD
+                td 13%
+                td 13%
+                td 13%
+                td 8%
+                td 8%
+                td 9%
+                td 9%
+                td 9%
+              tr
+                td EUR
+                td 12%
+                td 12%
+                td 12%
+                td 7%
+                td 7%
+                td 8%
+                td 8%
+                td 8%
+
+    footer
+      p ПуАТ «ФІДОБАНК». Банківські послуги. 
+      p Ліцензія НБУ № 4 від 13.07.2012 р. 
+      p Генеральна ліцензія НБУ № 4-3 від 28.10.2013 р.

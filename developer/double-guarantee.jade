@@ -1,0 +1,154 @@
+doctype html
+html(lang="ru")
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge,chrome=1")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(name="author", content="Anton Nemtsev, @silentimp, skype: ravencry")
+    link(rel="stylesheet", href="css/styles.css")
+    script(src="js/requirejs/require.js", data-main="js/fidobank.js")
+    title Депозит «Двойная гарантия» | Фідобанк
+  body
+    header
+      .wrapper
+        h1.logotype FidoBank
+        section.contacts
+          h2.title Ответы на вопросы
+          a(href="tel:+380800307676") 0 800 30 76 76
+            span Безкоштовно зі стаціонарних та мобільних телефонів в Україні
+    
+    .calculator-popup
+      .wrapper
+
+        form.current.double-guarantee-calculator(data-type="double-guarantee-calculator", action="/", method="post")
+          input.summ(autocomplete="off", maxlength="8", name="loan_size", value="10000", placeholder="Сумма в USD")
+          .drop-down-selector.small.term
+            .current.icon-down-open 3 месяца
+            .options
+              .option
+                input(name="loan_term", id="loan_term_3_double_popup", value="3", type="radio", checked="checked")
+                label(for="loan_term_3_double_popup") 3 месяца
+              .option
+                input(name="loan_term", id="loan_term_6_double_popup", value="6", type="radio")
+                label(for="loan_term_6_double_popup") 6 месяцев
+              .option
+                input(name="loan_term", id="loan_term_9_double_popup", value="9", type="radio")
+                label(for="loan_term_9_double_popup") 9 месяцев
+              .option
+                input(name="loan_term", id="loan_term_12_double_popup", value="12", type="radio")
+                label(for="loan_term_12_double_popup") 12 месяцев
+
+        section.monitor
+          p.percent +24%
+          p.summ
+            b 12800
+            span.currency ГРН
+          a.details(href="#") Докладніше
+
+    a.back-to-top.icon-up-open(href="#")
+
+    section.calculator
+      .outer-wraper
+        .inner-wraper
+          h2.slogan Оформити депозит тепер набагато легше!
+          
+          .calculator-forms
+            .tabs
+              
+              form.current.double-guarantee-calculator(action="/deposit/", method="post", data-type="double-guarantee-calculator")
+                fieldset
+                  input.summ(autocomplete="off", maxlength="8", name="loan_size", value="10000", placeholder="Сумма в USD")
+
+                  .drop-down-selector.term
+                    .current.icon-down-open 3 месяца
+                    .options
+                      .option
+                        input(name="loan_term", id="loan_term_3_double", value="3", type="radio", checked="checked")
+                        label(for="loan_term_3_double") 3 месяца
+                      .option
+                        input(name="loan_term", id="loan_term_6_double", value="6", type="radio")
+                        label(for="loan_term_6_double") 6 месяцев
+                      .option
+                        input(name="loan_term", id="loan_term_9_double", value="9", type="radio")
+                        label(for="loan_term_9_double") 9 месяцев
+                      .option
+                        input(name="loan_term", id="loan_term_12_double", value="12", type="radio")
+                        label(for="loan_term_12_double") 12 месяцев
+
+              section.monitor
+                p.percent +24%
+                p.summ
+                  b 12800
+                  span.currency ГРН
+                a.details(href="#") Докладніше
+                
+              footer
+                p * Подробнее о депозите “Еднисть”
+                nav.social
+                  a.fb.icon-facebook(href="#")
+                  a.tw.icon-twitter-bird(href="#")
+                  a.gp.icon-googleplus-rect(href="#")
+          
+          form.callback-form(action="/callback/", method="post")
+            header
+              h3.title Потрібна професійна консультація по депозиту?
+              a.back-to-calculator.icon-calc(href="#")
+            fieldset
+              .line
+                input(autocomplete="off", type="text", placeholder="Твоє ім'я", value="", name="person")
+                input(autocomplete="off", maxlength="17", type="text", placeholder="+38 0__ ___ __ __", value="", name="phone")
+              button(type="submit") Замовити дзвінок
+            footer
+              p Вкажи свої данні, Контакт-центр ФІДОБАНКу зв’яжеться з тобою протягом 20 хвилин
+              nav.social
+                a.fb.icon-facebook(href="#")
+                a.tw.icon-twitter-bird(href="#")
+                a.gp.icon-googleplus-rect(href="#")
+
+
+
+    section.deposit.deposit-double-guarantee
+      header
+        .wrapper
+          h2.title Депозит «Подвійна гарантія»
+          p Cтроковий вклад в доларах США, який гарантує подвійний захист коштів клієнтів: Фондом гарантування вкладів фізичних осіб і портфелем номінованих у валюті облігацій внутрішньої державної позики (ОВДП), яким володіє ФІДОБАНК.
+          h3.sub-title Як це працює?
+        .percent +12%
+
+      article
+        section
+          h3.title Це працює так:
+          p строковий вклад в доларах США, який гарантує подвійний захист коштів клієнтів: Фондом гарантування вкладів фізичних осіб і портфелем номінованих у валюті облігацій внутрішньої державної позики (ОВДП), яким володіє ФІДОБАНК.
+
+        section
+          h3.title Умови та особливості депозиту «Двойна гарантiя»:
+          ul
+            li терміни дії вкладу: 3,6,9 місяців, 370 днів;
+            li мінімальна сума вкладу: 1000 USD;
+            li максимальна сума: не обмежена;
+            li поповнення вкладу: без поповнення;
+            li виплата відсотків: щоквартально;
+            li пролонгація вкладу: не передбачено.
+
+        section
+          h3.title Процентна ставка:
+          table
+            thead
+              tr
+                th валюта
+                th 3 місяці
+                th 6 місяців
+                th 9 місяців
+                th 12 місяців
+            tbody
+              tr
+                td USD
+                td 12%
+                td 7%
+                td 7%
+                td 8%
+
+    footer
+      p ПуАТ «ФІДОБАНК». Банківські послуги. 
+      p Ліцензія НБУ № 4 від 13.07.2012 р. 
+      p Генеральна ліцензія НБУ № 4-3 від 28.10.2013 р.

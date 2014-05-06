@@ -2,7 +2,7 @@ define [
   "big.js/big",
   "ScrollController",
   "jquery.scrollTo",
-  "jquery.inputmask/dist/jquery.inputmask.bundle.min"
+  "jquery.maskedinput/jquery.maskedinput.min"
   ], (Big, ScrollController, scrl, plgn)->
 
   class CalculatorController
@@ -39,7 +39,7 @@ define [
       @calcMonitorPercent = @calcMonitor.find '.percent'
 
       @summ = $ 'input.summ'
-      @summ.inputmask("decimal", { allowMinus: false })
+      @summ.mask "9?9999999", {placeholder:""}
       @summ.on 'keypress', @syncSumm
 
       @ddi = $ '.drop-down-selector input'
@@ -300,4 +300,3 @@ define [
 
   return CalculatorController
 
-  

@@ -1,4 +1,6 @@
-define [], ->
+define [
+  "jquery.maskedinput/jquery.maskedinput.min"
+  ], (im)->
 
   class CallBackController
     constructor: ()->
@@ -11,11 +13,19 @@ define [], ->
       @tel = @widget.find 'input[name=phone]'
       @name = @widget.find 'input[name=person]'
 
-      @name.inputmask('Regex', {regex: "[а-яА-Я]{,32}"})
-      @tel.inputmask("mask", {"mask": "+38 099 999 99 99", clearMaskOnLostFocus: false})
-      # @tel.inputmask("+38 099 999 99 99")
-      # +38 0__ ___ __ __
+      $.mask.definitions['Y']='[а-яА-ЯёЁ]';
+      $.mask.definitions['X']='[а-яА-ЯёЁ ]';
+      @tel.mask "+38 099 999 99 99"
+      @name.mask "YX?XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",{placeholder:""}
 
+      # @name.inputmask('Regex', {regex: "[а-яА-Я\\s]*"})
+      # @name.inputmask("Regex", {regex: "[a-zA-Z ]+", onKeyValidation: @fuck})
+      # @tel.inputmask("mask", {"mask": "+38 099 999 99 99", clearMaskOnLostFocus: false})
+
+    fuck: (arg1, arg2, arg3)=>
+      console.log arg1, arg2, arg3
+      # if arg1 == false
+        # @name.val(@name.val().replace(/r/," "))
 
 
 
