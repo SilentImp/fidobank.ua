@@ -18,22 +18,32 @@ define [
       @max = 256 + @widgetHeight
 
       $(window).on 'scroll', @isVisible
+      
+      if Modernizr.touch
+        $(window).on 'touchmove', @isVisible
+        $(window).on 'touchmove', @redrawForIpad
+
       @isVisible()
+
+    redrawForIpad: =>
+      if @redrawing == true
+        percents = @getPercents()
+        @recountBGPos(percents)
+        @recountPercPos(percents)      
 
     redraw: =>
       percents = @getPercents()
       @recountBGPos(percents)
       @recountPercPos(percents)
-
       if @redrawing == false
         return
       requestAnimationFrame @redraw
 
     recountPercPos: (percents)=>
-      
       bottom = parseFloat((@max*percents/100)-128,10)
       @percent.css
         'bottom': bottom.toString()+'px'
+      console.log @percent.css('bottom')
 
 
     getPercents: =>
@@ -52,11 +62,12 @@ define [
         'background-position': '50% '+percents.toString()+'%'
         
 
-
     isVisible: (event)=>
       if @visibilityChecked == true
         return
+
       @visibilityChecked = true
+
       if @scrollController.checkIfElementVisible(@widget) == true
         if @redrawing == false
           @redrawing = true

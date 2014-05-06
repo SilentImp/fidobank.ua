@@ -8,6 +8,8 @@ define [
     constructor: ()->
       @Big = Big
 
+      @delayTime = 250
+
       @itype = 'click'
       if $('html').hasClass 'touch'
         @itype = 'touchstart'
@@ -55,6 +57,9 @@ define [
       @upButton.on @itype, @scrollTop
 
       @current = @tabs.find '>.current'
+
+      if Modernizr.touch
+        $(window).on 'touchmove', @isCalculatorVisible
 
       $(window).on 'scroll', @isCalculatorVisible
       @isCalculatorVisible()
@@ -296,7 +301,7 @@ define [
         @popup.addClass 'visible'
       window.setTimeout(()=>
         @visibilityChecked = false
-      ,250)
+      ,@delayTime)
 
 
   return CalculatorController
