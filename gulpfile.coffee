@@ -8,6 +8,7 @@ prefix      = require 'gulp-autoprefixer'
 minifyCSS   = require 'gulp-minify-css'
 concat      = require 'gulp-concat'
 uglify      = require 'gulp-uglify'
+prettify    = require 'gulp-prettify'
 
 dev_path =
   jade:   'developer/*.jade'
@@ -24,6 +25,7 @@ prod_path =
 gulp.task('html', ()->
   return gulp.src(dev_path.jade)
     .pipe(jade())
+    .pipe(prettify({indentSize: 2}))
     .pipe(gulp.dest(prod_path.html))
 )
 
