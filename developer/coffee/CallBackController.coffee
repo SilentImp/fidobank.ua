@@ -18,14 +18,18 @@ define [
       @tel.mask "+38 099 999 99 99"
       @name.mask "YX?XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",{placeholder:""}
 
-      # @name.inputmask('Regex', {regex: "[а-яА-Я\\s]*"})
-      # @name.inputmask("Regex", {regex: "[a-zA-Z ]+", onKeyValidation: @fuck})
-      # @tel.inputmask("mask", {"mask": "+38 099 999 99 99", clearMaskOnLostFocus: false})
+      @widget.on 'submit', @testInput
 
-    fuck: (arg1, arg2, arg3)=>
-      console.log arg1, arg2, arg3
-      # if arg1 == false
-        # @name.val(@name.val().replace(/r/," "))
+    testInput: (event)=>
+      event.preventDefault()
+      $.post(@widget.attr('action'),
+        "person": @name.val(),
+        "phone": @tel.val()
+      )
+      @widget[0].reset()
+
+      @widget.find('.ready-to-send').hide()
+      @widget.find('.message-was-send').show()
 
 
 

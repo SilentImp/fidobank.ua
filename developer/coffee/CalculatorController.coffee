@@ -257,6 +257,8 @@ define [
       event.preventDefault()
       @mainCalculator.show()
       @callBackForm.hide()
+      @callBackForm.find('.ready-to-send').show()
+      @callBackForm.find('.message-was-send').hide()
 
     showCallBackFormUp: (event)=>
       event.preventDefault()
