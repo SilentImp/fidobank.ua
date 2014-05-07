@@ -1,7 +1,8 @@
 define [
   "big.js/big",
   "ScrollController",
-  "jquery.maskedinput/jquery.maskedinput.min"
+  "jquery.maskedinput/jquery.maskedinput.min",
+  "cookies"
   ], (Big, ScrollController, scrl, plgn)->
 
   class CalculatorController
@@ -14,8 +15,9 @@ define [
       if $('html').hasClass 'touch'
         @itype = 'touchstart'
 
-
-      $('header .blocker').on @itype, @saveClick
+      blocker = $ 'header .blocker'
+      blocker.on @itype, @saveClick
+      blocker.on @itype, @message22
 
       @scrollController = new ScrollController()
       @visibilityChecked = false
@@ -54,9 +56,19 @@ define [
 
 
       @updetails.on @itype, @showCallBackFormUp
+      @updetails.on @itype, @message18
+      @updetails.on @itype, @message11
+
       @tabNav.find('a').on @itype, @selectDeposit
+      
       @detailsButton.on @itype, @showCallBackForm
+      @detailsButton.on @itype, @message16
+      @detailsButton.on @itype, @message6
+      @detailsButton.on @itype, @message17
+      
       @calcButton.on @itype, @showCalcForm
+      @calcButton.on @itype, @message24
+
       @upButton.on @itype, @scrollTop
 
       @current = @tabs.find '>.current'
@@ -273,6 +285,115 @@ define [
       @callBackForm.find('.ready-to-send').show()
       @callBackForm.find('.message-was-send').hide()
 
+    getData: =>
+      currentForm = $('.calculator-forms form.current')
+      type = currentForm.attr 'data-type'
+      switch type
+        when 'unity-calculator'
+          name = "Депозит «Єдність»"
+          term = currentForm.find('[name="loan_term"]:checked').val()
+          currency = currentForm.find('[name="loan_currency"]:checked').val()
+        when 'double-guarantee-calculator'
+          name = "Депозит «Подвійна гарантія»"
+          term = currentForm.find('[name="loan_term"]:checked').val()
+          currency = "USD"
+        when 'plastic-fantasy-calculator'
+          name = "Депозит «Пластик Фантастик»"
+          term = 12
+          currency = "UAH"
+      summ = currentForm.find('.summ').val()
+      return [name, term, summ, currency]
+
+    message6: =>
+      if window.docCookies.getItem('message6') != null
+        return
+      window.docCookies.setItem('message6', true, Infinity)
+      data = @getData()
+      try 
+        ga('send', 'event', 'Form', 'More', '#'+data[2]+' '+data[3]+' - '+data[1]+' Month#')
+      catch e
+        console.log e
+
+    message11: =>
+      if window.docCookies.getItem('message11') != null
+        return
+      window.docCookies.setItem('message11', true, Infinity)
+      data = @getData()
+      try 
+        ga('send', 'event', 'Header', 'More', '#'+data[2]+' '+data[3]+' - '+data[1]+' Month#')
+      catch e
+        console.log e
+
+    message15: =>
+      if window.docCookies.getItem('message15') != null
+        return
+      window.docCookies.setItem('message15', true, Infinity)
+      data = @getData()
+      try 
+        ga('send', 'event', 'Buttons CTR', 'More Form', 'Impression')
+      catch e
+        console.log e
+
+    message16: =>
+      if window.docCookies.getItem('message16') != null
+        return
+      window.docCookies.setItem('message16', true, Infinity)
+      data = @getData()
+      try 
+        ga('send', 'event', 'Buttons CTR', 'More Form', 'Click')
+      catch e
+        console.log e
+
+    message17: =>
+      if window.docCookies.getItem('message17') != null
+        return
+      window.docCookies.setItem('message17', true, Infinity)
+      data = @getData()
+      try 
+        ga('send', 'event', 'Buttons CTR', 'More Header', 'Impression')
+      catch e
+        console.log e
+
+    message18: =>
+      if window.docCookies.getItem('message18') != null
+        return
+      window.docCookies.setItem('message18', true, Infinity)
+      data = @getData()
+      try 
+        ga('send', 'event', 'Buttons CTR', 'More Header', 'Click')
+      catch e
+        console.log e
+
+    message19: =>
+      if window.docCookies.getItem('message19') != null
+        return
+      window.docCookies.setItem('message19', true, Infinity)
+      data = @getData()
+      try 
+        ga('send', 'event', 'Buttons CTR', 'Book a Call', 'Impression')
+      catch e
+        console.log e
+
+    message22: =>
+      if window.docCookies.getItem('message22') != null
+        return
+      window.docCookies.setItem('message22', true, Infinity)
+      data = @getData()
+      try 
+        ga('send', 'event', 'Form', 'Calculator', 'User clicks on calculator button')
+      catch e
+        console.log e
+
+    message24: =>
+      if window.docCookies.getItem('message24') != null
+        return
+      window.docCookies.setItem('message24', true, Infinity)
+      data = @getData()
+      try 
+        ga('send', 'event', 'Contact', 'Show Number', 'User clicks on button show number')
+      catch e
+        console.log e
+
     showCallBackFormUp: (event)=>
       event.preventDefault()
       @mainCalculator.hide()
@@ -304,18 +425,22 @@ define [
       @current.addClass 'current'
 
       @recountForm()
-
       
     isCalculatorVisible: =>
       if @visibilityChecked == true
         return
       @visibilityChecked = true
+
+      if @scrollController.checkIfElementVisible(@detailsButton)
+        @message15()
+
       if @scrollController.checkIfElementVisible(@mainCalculator)
         @upButton.removeClass 'visible'
         @popup.removeClass 'visible'
       else
         @upButton.addClass 'visible'
         @popup.addClass 'visible'
+        @message17()
       window.setTimeout(()=>
         @visibilityChecked = false
       ,@delayTime)

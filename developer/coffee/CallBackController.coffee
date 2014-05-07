@@ -19,6 +19,26 @@ define [
       @name.mask "YX?XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",{placeholder:""}
 
       @widget.on 'submit', @testInput
+      @widget.find('button').on 'click', @message20
+
+    message7: =>
+      if window.docCookies.getItem('message7') != null
+        return
+      window.docCookies.setItem('message7', true, Infinity)
+      try 
+        ga('send', 'event', 'Form', 'Book a Call', '#'+@name.val()+' '+@tel.val()+'#')
+      catch e
+        console.log e
+
+    message20: =>
+      if window.docCookies.getItem('message20') != null
+        return
+      window.docCookies.setItem('message20', true, Infinity)
+      data = @getData()
+      try 
+        ga('send', 'event', 'Buttons CTR', 'Book a Call', 'Click')
+      catch e
+        console.log e
 
     testInput: (event)=>
       event.preventDefault()
@@ -31,7 +51,7 @@ define [
           term = currentForm.find('[name="loan_term"]:checked').val()
           currency = currentForm.find('[name="loan_currency"]:checked').val()
         when 'double-guarantee-calculator'
-          name = "Депозит «Двойная гарантия»"
+          name = "Депозит «Подвійна гарантія»"
           term = currentForm.find('[name="loan_term"]:checked').val()
           currency = "USD"
         when 'plastic-fantasy-calculator'
@@ -48,7 +68,7 @@ define [
         "currency": currency,
         "summ": summ
 
-
+      @message7()
       $.post @widget.attr('action'), data
       @widget[0].reset()
       @widget.find('.message').hide()

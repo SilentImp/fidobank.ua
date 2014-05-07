@@ -20,9 +20,9 @@ html(lang="ru")
               | показати
               br
               | номер
-          a.tel(href="tel:+380442388835") 044 238 88 
+          a.tel(href="tel:+380442386767") 044 238 67 
             strong …
-            b 35
+            b 67
             span Дзвінки за стандартними тарифами оператора
 
     .calculator-popup
@@ -50,25 +50,25 @@ html(lang="ru")
                 label(for="loan_term_1_popup") 1 месяц
               .option
                 input(name="loan_term", id="loan_term_2_popup", value="2", type="radio")
-                label(for="loan_term_2_popup") 2 месяца
+                label(for="loan_term_2_popup") 2 місяці
               .option
                 input(name="loan_term", id="loan_term_3_popup", value="3", type="radio")
-                label(for="loan_term_3_popup") 3 месяца
+                label(for="loan_term_3_popup") 3 місяці
               .option
                 input(name="loan_term", id="loan_term_6_popup", value="6", type="radio")
-                label(for="loan_term_6_popup") 6 месяцев
+                label(for="loan_term_6_popup") 6 місяців
               .option
                 input(name="loan_term", id="loan_term_9_popup", value="9", type="radio")
-                label(for="loan_term_9_popup") 9 месяцев
+                label(for="loan_term_9_popup") 9 місяців
               .option
                 input(name="loan_term", id="loan_term_12_popup", value="12", type="radio")
                 label(for="loan_term_12_popup") 370 дней
               .option
                 input(name="loan_term", id="loan_term_18_popup", value="18", type="radio")
-                label(for="loan_term_18_popup") 18 месяцев
+                label(for="loan_term_18_popup") 18 місяців
               .option
                 input(name="loan_term", id="loan_term_24_popup", value="24", type="radio")
-                label(for="loan_term_24_popup") 24 месяца
+                label(for="loan_term_24_popup") 24 місяці
           
         section.monitor
           p.percent +24%
@@ -90,7 +90,7 @@ html(lang="ru")
               
               form.current.unity-calculator(action="/deposit/", method="post", data-type="unity-calculator")
                 header
-                  h3.title Введи сумму для розрахунку
+                  h3.title Введи суму для розрахунку
                 fieldset
                   input.summ(autocomplete="off", maxlength="8", type="text", name="loan_size", value="10000", placeholder="Cума")
                   
@@ -114,25 +114,25 @@ html(lang="ru")
                         label(for="loan_term_1") 1 месяц
                       .option
                         input(name="loan_term", id="loan_term_2", value="2", type="radio")
-                        label(for="loan_term_2") 2 месяца
+                        label(for="loan_term_2") 2 місяці
                       .option
                         input(name="loan_term", id="loan_term_3", value="3", type="radio")
-                        label(for="loan_term_3") 3 месяца
+                        label(for="loan_term_3") 3 місяці
                       .option
                         input(name="loan_term", id="loan_term_6", value="6", type="radio")
-                        label(for="loan_term_6") 6 месяцев
+                        label(for="loan_term_6") 6 місяців
                       .option
                         input(name="loan_term", id="loan_term_9", value="9", type="radio")
-                        label(for="loan_term_9") 9 месяцев
+                        label(for="loan_term_9") 9 місяців
                       .option
                         input(name="loan_term", id="loan_term_12", value="12", type="radio")
                         label(for="loan_term_12") 370 дней
                       .option
                         input(name="loan_term", id="loan_term_18", value="18", type="radio")
-                        label(for="loan_term_18") 18 месяцев
+                        label(for="loan_term_18") 18 місяців
                       .option
                         input(name="loan_term", id="loan_term_24", value="24", type="radio")
-                        label(for="loan_term_24") 24 месяца
+                        label(for="loan_term_24") 24 місяці
               
               section.monitor
                 p.percent +24%
@@ -141,12 +141,12 @@ html(lang="ru")
                   span.currency ГРН
                 a.details(href="#") Докладніше
                 
-              footer
-                p * Подробнее о депозите “Еднисть”
-                nav.social
-                  a.fb.icon-facebook(href="#")
-                  a.tw.icon-twitter-bird(href="#")
-                  a.gp.icon-googleplus-rect(href="#")
+              //- footer
+              //-   p * Подробнее о депозите “Еднисть”
+              //-   nav.social
+              //-     a.fb.icon-facebook(href="#")
+              //-     a.tw.icon-twitter-bird(href="#")
+              //-     a.gp.icon-googleplus-rect(href="#")
           
           form.callback-form(action="/callback/", method="post")
             .ready-to-send
@@ -244,3 +244,5 @@ html(lang="ru")
       p ПуАТ «ФІДОБАНК». Банківські послуги. 
       p Ліцензія НБУ № 4 від 13.07.2012 р. 
       p Генеральна ліцензія НБУ № 4-3 від 28.10.2013 р.
+
+    script(src="js/ga.js")

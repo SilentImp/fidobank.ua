@@ -7,7 +7,7 @@ html(lang="ru")
     meta(name="author", content="Anton Nemtsev, @silentimp, skype: ravencry")
     link(rel="stylesheet", href="css/styles.css")
     script(src="js/requirejs/require.js", data-main="js/fidobank.js")
-    title Депозит «Двойная гарантия» | Фідобанк
+    title Депозит «Подвійна гарантія» | Фідобанк
   body
     
     header
@@ -20,9 +20,9 @@ html(lang="ru")
               | показати
               br
               | номер
-          a.tel(href="tel:+380442388835") 044 238 88 
+          a.tel(href="tel:+380442386767") 044 238 67 
             strong …
-            b 35
+            b 67
             span Дзвінки за стандартними тарифами оператора
             
     .calculator-popup
@@ -31,20 +31,20 @@ html(lang="ru")
         form.current.double-guarantee-calculator(data-type="double-guarantee-calculator", action="/", method="post")
           input.summ(autocomplete="off", maxlength="8", name="loan_size", value="10000", placeholder="Сумма в USD")
           .drop-down-selector.small.term
-            .current.icon-down-open 3 месяца
+            .current.icon-down-open 3 місяці
             .options
               .option
                 input(name="loan_term", id="loan_term_3_double_popup", value="3", type="radio", checked="checked")
-                label(for="loan_term_3_double_popup") 3 месяца
+                label(for="loan_term_3_double_popup") 3 місяці
               .option
                 input(name="loan_term", id="loan_term_6_double_popup", value="6", type="radio")
-                label(for="loan_term_6_double_popup") 6 месяцев
+                label(for="loan_term_6_double_popup") 6 місяців
               .option
                 input(name="loan_term", id="loan_term_9_double_popup", value="9", type="radio")
-                label(for="loan_term_9_double_popup") 9 месяцев
+                label(for="loan_term_9_double_popup") 9 місяців
               .option
                 input(name="loan_term", id="loan_term_12_double_popup", value="12", type="radio")
-                label(for="loan_term_12_double_popup") 12 месяцев
+                label(for="loan_term_12_double_popup") 12 місяців
 
         section.monitor
           p.percent +24%
@@ -70,20 +70,20 @@ html(lang="ru")
                   input.summ(autocomplete="off", maxlength="8", name="loan_size", value="10000", placeholder="Сумма в USD")
 
                   .drop-down-selector.term
-                    .current.icon-down-open 3 месяца
+                    .current.icon-down-open 3 місяці
                     .options
                       .option
                         input(name="loan_term", id="loan_term_3_double", value="3", type="radio", checked="checked")
-                        label(for="loan_term_3_double") 3 месяца
+                        label(for="loan_term_3_double") 3 місяці
                       .option
                         input(name="loan_term", id="loan_term_6_double", value="6", type="radio")
-                        label(for="loan_term_6_double") 6 месяцев
+                        label(for="loan_term_6_double") 6 місяців
                       .option
                         input(name="loan_term", id="loan_term_9_double", value="9", type="radio")
-                        label(for="loan_term_9_double") 9 месяцев
+                        label(for="loan_term_9_double") 9 місяців
                       .option
                         input(name="loan_term", id="loan_term_12_double", value="12", type="radio")
-                        label(for="loan_term_12_double") 12 месяцев
+                        label(for="loan_term_12_double") 12 місяців
 
               section.monitor
                 p.percent +24%
@@ -92,12 +92,12 @@ html(lang="ru")
                   span.currency ГРН
                 a.details(href="#") Докладніше
                 
-              footer
-                p * Подробнее о депозите “Еднисть”
-                nav.social
-                  a.fb.icon-facebook(href="#")
-                  a.tw.icon-twitter-bird(href="#")
-                  a.gp.icon-googleplus-rect(href="#")
+              //- footer
+              //-   p * Подробнее о депозите “Еднисть”
+              //-   nav.social
+              //-     a.fb.icon-facebook(href="#")
+              //-     a.tw.icon-twitter-bird(href="#")
+              //-     a.gp.icon-googleplus-rect(href="#")
           
           form.callback-form(action="/callback/", method="post")
             .ready-to-send
@@ -117,10 +117,10 @@ html(lang="ru")
                 p Контакт-центр ФІДОБАНКу зв'яжеться з тобою протягом 20 хвилин для уточнення деталей
             footer
               p.message Вкажи свої данні, Контакт-центр ФІДОБАНКу зв’яжеться з тобою протягом 20 хвилин
-              nav.social
-                a.fb.icon-facebook(href="#")
-                a.tw.icon-twitter-bird(href="#")
-                a.gp.icon-googleplus-rect(href="#")
+              //- nav.social
+              //-   a.fb.icon-facebook(href="#")
+              //-   a.tw.icon-twitter-bird(href="#")
+              //-   a.gp.icon-googleplus-rect(href="#")
 
 
 
@@ -138,7 +138,7 @@ html(lang="ru")
           p строковий вклад в доларах США, який гарантує подвійний захист коштів клієнтів: Фондом гарантування вкладів фізичних осіб і портфелем номінованих у валюті облігацій внутрішньої державної позики (ОВДП), яким володіє ФІДОБАНК.
 
         section
-          h3.title Умови та особливості депозиту «Двойна гарантiя»:
+          h3.title Умови та особливості депозиту «Пластик Фантастик»:
           ul
             li терміни дії вкладу: 3,6,9 місяців, 370 днів;
             li мінімальна сума вкладу: 1000 USD;
@@ -169,3 +169,5 @@ html(lang="ru")
       p ПуАТ «ФІДОБАНК». Банківські послуги. 
       p Ліцензія НБУ № 4 від 13.07.2012 р. 
       p Генеральна ліцензія НБУ № 4-3 від 28.10.2013 р.
+
+    script(src="js/ga.js")

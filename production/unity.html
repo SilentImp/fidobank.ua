@@ -6,10 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Anton Nemtsev, @silentimp, skype: ravencry">
-    <meta name="viewport" content="initial-scale=1.0">
     <link rel="stylesheet" href="css/styles.css">
     <script src="js/requirejs/require.js" data-main="js/fidobank.js"></script>
-    <title>Фідобанк</title>
+    <title>Депозит «Єдність» | Фідобанк</title>
 </head>
 
 <body>
@@ -19,7 +18,7 @@
             <section class="contacts">
                 <h2 class="title">Відповіді на питання</h2>
                 <div class="blocker"><span>показати<br>номер</span>
-                </div><a href="tel:+380442386767" class="tel">044 238 67<strong>…</strong><b>67</b><span>Дзвінки за стандартними тарифами оператора</span></a>
+                </div><a href="tel:+380442386767" class="tel">044 238 67 <strong>…</strong><b>67</b><span>Дзвінки за стандартними тарифами оператора</span></a>
             </section>
         </div>
     </header>
@@ -82,33 +81,6 @@
                     </div>
                 </div>
             </form>
-            <form data-type="double-guarantee-calculator" action="/" method="post" class="double-guarantee-calculator">
-                <input autocomplete="off" maxlength="8" name="loan_size" value="10000" placeholder="Сумма в USD" class="summ">
-                <div class="drop-down-selector small term">
-                    <div class="current icon-down-open">3 місяці</div>
-                    <div class="options">
-                        <div class="option">
-                            <input name="loan_term" id="loan_term_3_double_popup" value="3" type="radio" checked="checked">
-                            <label for="loan_term_3_double_popup">3 місяці</label>
-                        </div>
-                        <div class="option">
-                            <input name="loan_term" id="loan_term_6_double_popup" value="6" type="radio">
-                            <label for="loan_term_6_double_popup">6 місяців</label>
-                        </div>
-                        <div class="option">
-                            <input name="loan_term" id="loan_term_9_double_popup" value="9" type="radio">
-                            <label for="loan_term_9_double_popup">9 місяців</label>
-                        </div>
-                        <div class="option">
-                            <input name="loan_term" id="loan_term_12_double_popup" value="12" type="radio">
-                            <label for="loan_term_12_double_popup">12 місяців</label>
-                        </div>
-                    </div>
-                </div>
-            </form>
-            <form data-type="plastic-fantasy-calculator" action="/" method="post" class="plastic-fantasy-calculator">
-                <input autocomplete="off" maxlength="8" name="loan_size" value="10000" placeholder="Сумма в UAH" class="summ">
-            </form>
             <section class="monitor">
                 <p class="percent">+24%</p>
                 <p class="summ"><b>12800</b><span class="currency">ГРН</span>
@@ -122,8 +94,6 @@
             <div class="inner-wraper">
                 <h2 class="slogan">Оформити депозит тепер набагато легше!</h2>
                 <div class="calculator-forms">
-                    <nav class="tab-navigation"><a href="#unity-calculator" class="unity current">Еднiсть</a><a href="#double-guarantee-calculator" class="double">Подвійна гарантія</a><a href="#plastic-fantasy-calculator" class="plastic">Пластик Фантастик</a>
-                    </nav>
                     <div class="tabs">
                         <form action="/deposit/" method="post" data-type="unity-calculator" class="current unity-calculator">
                             <header>
@@ -185,43 +155,6 @@
                                         </div>
                                     </div>
                                 </div>
-                            </fieldset>
-                        </form>
-                        <form action="/deposit/" method="post" data-type="double-guarantee-calculator" class="double-guarantee-calculator">
-                            <header>
-                                <h3 class="title">Введи суму та бажаний строк депозиту</h3>
-                            </header>
-                            <fieldset>
-                                <input autocomplete="off" maxlength="8" name="loan_size" value="10000" placeholder="Сумма в USD" class="summ">
-                                <div class="drop-down-selector term">
-                                    <div class="current icon-down-open">3 місяці</div>
-                                    <div class="options">
-                                        <div class="option">
-                                            <input name="loan_term" id="loan_term_3_double" value="3" type="radio" checked="checked">
-                                            <label for="loan_term_3_double">3 місяці</label>
-                                        </div>
-                                        <div class="option">
-                                            <input name="loan_term" id="loan_term_6_double" value="6" type="radio">
-                                            <label for="loan_term_6_double">6 місяців</label>
-                                        </div>
-                                        <div class="option">
-                                            <input name="loan_term" id="loan_term_9_double" value="9" type="radio">
-                                            <label for="loan_term_9_double">9 місяців</label>
-                                        </div>
-                                        <div class="option">
-                                            <input name="loan_term" id="loan_term_12_double" value="12" type="radio">
-                                            <label for="loan_term_12_double">12 місяців</label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </fieldset>
-                        </form>
-                        <form action="/deposit/" method="post" data-type="plastic-fantasy-calculator" class="plastic-fantasy-calculator">
-                            <header>
-                                <h3 class="title">Введи суму для розрахунку</h3>
-                            </header>
-                            <fieldset>
-                                <input autocomplete="off" maxlength="8" name="loan_size" value="10000" placeholder="Сумма в UAH" class="summ">
                             </fieldset>
                         </form>
                         <section class="monitor">
@@ -342,107 +275,6 @@
                             <td>8%</td>
                             <td>8%</td>
                             <td>8%</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </section>
-        </article>
-    </section>
-    <section class="deposit deposit-double-guarantee">
-        <header>
-            <div class="wrapper">
-                <h2 class="title">Депозит «Подвійна гарантія»</h2>
-                <p>Cтроковий вклад в доларах США, який гарантує подвійний захист коштів клієнтів: Фондом гарантування вкладів фізичних осіб і портфелем номінованих у валюті облігацій внутрішньої державної позики (ОВДП), яким володіє ФІДОБАНК.</p>
-                <h3 class="sub-title">Як це працює?</h3>
-            </div>
-            <div class="percent">+12%</div>
-        </header>
-        <article>
-            <section>
-                <h3 class="title">Це працює так:</h3>
-                <p>строковий вклад в доларах США, який гарантує подвійний захист коштів клієнтів: Фондом гарантування вкладів фізичних осіб і портфелем номінованих у валюті облігацій внутрішньої державної позики (ОВДП), яким володіє ФІДОБАНК.</p>
-            </section>
-            <section>
-                <h3 class="title">Умови та особливості депозиту «Пластик Фантастик»:</h3>
-                <ul>
-                    <li>терміни дії вкладу: 3,6,9 місяців, 370 днів;</li>
-                    <li>мінімальна сума вкладу: 1000 USD;</li>
-                    <li>максимальна сума: не обмежена;</li>
-                    <li>поповнення вкладу: без поповнення;</li>
-                    <li>виплата відсотків: щоквартально;</li>
-                    <li>пролонгація вкладу: не передбачено.</li>
-                </ul>
-            </section>
-            <section>
-                <h3 class="title">Процентна ставка:</h3>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>валюта</th>
-                            <th>3 місяці</th>
-                            <th>6 місяців</th>
-                            <th>9 місяців</th>
-                            <th>12 місяців</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>USD</td>
-                            <td>12%</td>
-                            <td>7%</td>
-                            <td>7%</td>
-                            <td>8%</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </section>
-        </article>
-    </section>
-    <section class="deposit deposit-plastic-fantasy">
-        <header>
-            <div class="wrapper">
-                <h2 class="title">Депозит «Пластик Фантастик»</h2>
-                <p>Накопичувальна карта «Пластик-Фантастик» – пропозиція ФІДОБАНКа, яка забезпечує клієнту вільний доступ до заощаджень та дозволяє отримати 20% річних у гривні на залишок на картковому рахунку. Цей продукт для людей, які хочуть цілодобово
-                    контролювати свої заощадження, самостійно керувати своїми витратами та отримувати максимальный дохід від розміщення своїх грошей навіть на дуже короткий період.</p>
-                <h3 class="sub-title">Як це працює?</h3>
-            </div>
-            <div class="percent">+20%</div>
-        </header>
-        <article>
-            <section>
-                <h3 class="title">Це працює так:</h3>
-                <p>За допомогою безкоштовної картки миттєвого випуску платіжної системи MasterCard ви можете розраховуватися коштами з ощадного рахунку в торгово-сервісній мережі і знімати в банкоматах саме тоді, коли вам це потрібно. Доступна також іменна
-                    карта з чіпом більш високого класу Mastercard Debit Standard з вартістю випуску 100 грн. При цьому ощадний рахунок можна поповнювати без комісії на будь-яку суму у відділеннях ФІДОБАНКа і терміналах самообслуговування.</p>
-            </section>
-            <section>
-                <h3 class="title">Умови та особливості депозиту «Пластик Фантастик»:</h3>
-                <ul>
-                    <li>Валюта: UAH;</li>
-                    <li>Доступні терміни вкладу: без обмежень;</li>
-                    <li>Поповнення рахунку: без обмежень по сумі. Поповнення без комісії - безготівковими переказами з рахунків в інших банках, готівкою у відділеннях ФІДОБАНКа;</li>
-                    <li>Максимальная сума: не обмежено;</li>
-                    <li>Незнижувана сума: відсутня;</li>
-                    <li>Нарахування відсотків: щодня на середньоденні залишки по картковому рахунку;</li>
-                    <li>Виплата відсотків: щомісяця на картковий рахунок шляхом приєднання відсотків до суми залишку;</li>
-                    <li>Процентні ставки: 20% річних у гривні (на суму понад 1000 грн), 8% річних (на суму до 1000 грн);</li>
-                    <li>Клас платіжної картки для доступу до засобів: MasterCard Instant (неіменна миттєвого випуску, з магнітною смугою, безкоштовна) або MasterCard Debit Standard (іменна, чіпова, з платою за випуск);</li>
-                    <li>Ліміти: 2000 грн на день (незмінний протягом строку дії картки), добовий ліміт на суму покупок - до 10 000 грн (може бути змінений клієнтом);</li>
-                    <li>Додаткові безкоштовні сервіси: СМС-інформування, управління коштами через інтернет-банкінг.</li>
-                </ul>
-            </section>
-            <section>
-                <h3 class="title">Процентна ставка:</h3>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>до 1000 грн</th>
-                            <th>понад 1000 грн</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>8%</td>
-                            <td>20%</td>
                         </tr>
                     </tbody>
                 </table>

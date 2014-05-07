@@ -20,9 +20,9 @@ html(lang="ru")
               | показати
               br
               | номер
-          a.tel(href="tel:+380442388835") 044 238 88 
+          a.tel(href="tel:+380442386767") 044 238 67 
             strong …
-            b 35
+            b 67
             span Дзвінки за стандартними тарифами оператора
             
     .calculator-popup
@@ -50,11 +50,11 @@ html(lang="ru")
 
               form.current.plastic-fantasy-calculator(action="/deposit/", method="post", data-type="plastic-fantasy-calculator")
                 header
-                  h3.title Введи сумму для розрахунку
+                  h3.title Введи суму для розрахунку
                 fieldset
                   input.summ(autocomplete="off", maxlength="8", name="loan_size", value="10000", placeholder="Сумма в UAH")
-                footer
-                  p Розрахунок здійснено виходячи зі строку розміщення коштів на 12 місяців.
+                //- footer
+                //-   p Розрахунок здійснено виходячи зі строку розміщення коштів на 12 місяців.
                   
               section.monitor
                 p.percent +24%
@@ -63,12 +63,12 @@ html(lang="ru")
                   span.currency ГРН
                 a.details(href="#") Докладніше
                 
-              footer
-                p * Подробнее о депозите “Еднисть”
-                nav.social
-                  a.fb.icon-facebook(href="#")
-                  a.tw.icon-twitter-bird(href="#")
-                  a.gp.icon-googleplus-rect(href="#")
+              //- footer
+              //-   p * Подробнее о депозите “Еднисть”
+              //-   nav.social
+              //-     a.fb.icon-facebook(href="#")
+              //-     a.tw.icon-twitter-bird(href="#")
+              //-     a.gp.icon-googleplus-rect(href="#")
           
           form.callback-form(action="/callback/", method="post")
             .ready-to-send
@@ -88,10 +88,10 @@ html(lang="ru")
                 p Контакт-центр ФІДОБАНКу зв'яжеться з тобою протягом 20 хвилин для уточнення деталей
             footer
               p.message Вкажи свої данні, Контакт-центр ФІДОБАНКу зв’яжеться з тобою протягом 20 хвилин
-              nav.social
-                a.fb.icon-facebook(href="#")
-                a.tw.icon-twitter-bird(href="#")
-                a.gp.icon-googleplus-rect(href="#")
+              //- nav.social
+              //-   a.fb.icon-facebook(href="#")
+              //-   a.tw.icon-twitter-bird(href="#")
+              //-   a.gp.icon-googleplus-rect(href="#")
 
     section.deposit.deposit-plastic-fantasy
       header
@@ -107,7 +107,7 @@ html(lang="ru")
           p За допомогою безкоштовної картки миттєвого випуску платіжної системи MasterCard ви можете розраховуватися коштами з ощадного рахунку в торгово-сервісній мережі і знімати в банкоматах саме тоді, коли вам це потрібно. Доступна також іменна карта з чіпом більш високого класу Mastercard Debit Standard з вартістю випуску 100 грн. При цьому ощадний рахунок можна поповнювати без комісії на будь-яку суму у відділеннях ФІДОБАНКа і терміналах самообслуговування.
         
         section
-          h3.title Умови та особливості депозиту «Подвійна гарантiя»:
+          h3.title Умови та особливості депозиту «Пластик Фантастик»:
           ul
             li валюта: UAH;
             li доступні терміни вкладу: без обмежень;
@@ -137,3 +137,5 @@ html(lang="ru")
       p ПуАТ «ФІДОБАНК». Банківські послуги. 
       p Ліцензія НБУ № 4 від 13.07.2012 р. 
       p Генеральна ліцензія НБУ № 4-3 від 28.10.2013 р.
+
+    script(src="js/ga.js")
