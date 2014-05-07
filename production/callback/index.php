@@ -16,7 +16,7 @@
     mail(
     'ann.gant@gmail.com, andrii@sus.name', 
     'Заявка на д'.substr($_POST['name'],1), 
-    'Заявка от '.$_POST['person'].'. \nНомер телефона '.$_POST['phone'].'. \n '.$_POST['name'].'. \nБажаний строк депозиту: '.$_POST['term'].'. \nCумма депозиту: '.$_POST['summ'].'. \nВалюта депозиту: '.$_POST['currency']);
+    "Заявка от ".$_POST['person'].". \nНомер телефона ".$_POST['phone'].". \n ".$_POST['name'].". \nБажаний строк депозиту: ".$_POST['term'].". \nCумма депозиту: ".$_POST['summ'].". \nВалюта депозиту: ".$_POST['currency']);
 }?>
 <!-- 
 <!DOCTYPE html><html lang="ru"><head>
