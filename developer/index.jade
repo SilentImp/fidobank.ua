@@ -10,13 +10,19 @@ html(lang="ru")
     script(src="js/requirejs/require.js", data-main="js/fidobank.js")
     title Фідобанк
   body
+    
     header
       .wrapper
         h1.logotype FidoBank
         section.contacts
           h2.title Відповіді на питання
-          .blocker Клацніть щоб побачити номер
+          .blocker 
+            span
+              | показати
+              br
+              | номер
           a.tel(href="tel:+380442388835") 044 238 88 
+            strong …
             b 35
             span Дзвінки за стандартними тарифами оператора
 

@@ -15,35 +15,42 @@ body>header
     .contacts
       position relative
       float right
-      width 440px
+      min-width 450px 
       color #00316f
       padding 25px 12px 0 0
-      font-size 23px
+      font-size 24px
       font-family 'Plumb Medium', Helvetica, Arial, sans-serif
       &.clicked
-        a b
-          opacity 1 
+        a 
+          strong
+            display none
+          b
+            opacity 1 
       .title
         display inline-block
         vertical-align top
-        margin-right 32px
+        margin-right 16px
       .blocker
         cursor pointer
         position absolute
         right 0
         top 0
-        bottom 0
+        bottom -23px
         left 0
-        padding 26px 0 0 370px
+        padding 25px 10px 0 0
         font-size 10px
         z-index 20
         background-color rgba(255,255,255,0)
+        span
+          float right
       a
         text-decoration none
         color #808285
         display inline-block
         vertical-align top
-        width 160px
+        strong
+          display inline-block
+          font-weight normal
         b
           opacity 0
           transition opacity .5s
@@ -52,4 +59,5 @@ body>header
           display block
           font-size 10px
           line-height 12px
+          width 160px
   
