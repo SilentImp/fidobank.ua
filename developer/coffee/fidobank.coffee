@@ -25,9 +25,3 @@ requirejs [
   for dropdown in $('.drop-down-selector')
     new DropDownController(dropdown)
 
-  if Modernizr.touch
-    top.window.myscroll = new IScroll('html',
-      zoom:true, 
-      onScrollMove:()->
-        $(window).trigger("scrolled")
-    )
