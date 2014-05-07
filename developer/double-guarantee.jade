@@ -58,6 +58,8 @@ html(lang="ru")
             .tabs
               
               form.current.double-guarantee-calculator(action="/deposit/", method="post", data-type="double-guarantee-calculator")
+                header
+                  h3.title Введи суму та бажаний строк депозиту
                 fieldset
                   input.summ(autocomplete="off", maxlength="8", name="loan_size", value="10000", placeholder="Сумма в USD")
 

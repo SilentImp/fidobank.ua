@@ -125,6 +125,9 @@
                     </nav>
                     <div class="tabs">
                         <form action="/deposit/" method="post" data-type="unity-calculator" class="current unity-calculator">
+                            <header>
+                                <h3 class="title">Введи сумму для розрахунку</h3>
+                            </header>
                             <fieldset>
                                 <input autocomplete="off" maxlength="8" type="text" name="loan_size" value="10000" placeholder="Cума" class="summ">
                                 <div class="drop-down-selector currency">
@@ -184,6 +187,9 @@
                             </fieldset>
                         </form>
                         <form action="/deposit/" method="post" data-type="double-guarantee-calculator" class="double-guarantee-calculator">
+                            <header>
+                                <h3 class="title">Введи суму та бажаний строк депозиту</h3>
+                            </header>
                             <fieldset>
                                 <input autocomplete="off" maxlength="8" name="loan_size" value="10000" placeholder="Сумма в USD" class="summ">
                                 <div class="drop-down-selector term">
@@ -210,9 +216,15 @@
                             </fieldset>
                         </form>
                         <form action="/deposit/" method="post" data-type="plastic-fantasy-calculator" class="plastic-fantasy-calculator">
+                            <header>
+                                <h3 class="title">Введи сумму для розрахунку</h3>
+                            </header>
                             <fieldset>
                                 <input autocomplete="off" maxlength="8" name="loan_size" value="10000" placeholder="Сумма в UAH" class="summ">
                             </fieldset>
+                            <footer>
+                                <p>Розрахунок здійснено виходячи зі строку розміщення коштів на 12 місяців.</p>
+                            </footer>
                         </form>
                         <section class="monitor">
                             <p class="percent">+24%</p>

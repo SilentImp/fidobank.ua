@@ -43,9 +43,13 @@ html(lang="ru")
             .tabs
 
               form.current.plastic-fantasy-calculator(action="/deposit/", method="post", data-type="plastic-fantasy-calculator")
+                header
+                  h3.title Введи сумму для розрахунку
                 fieldset
                   input.summ(autocomplete="off", maxlength="8", name="loan_size", value="10000", placeholder="Сумма в UAH")
-
+                footer
+                  p Розрахунок здійснено виходячи зі строку розміщення коштів на 12 місяців.
+                  
               section.monitor
                 p.percent +24%
                 p.summ

@@ -10,7 +10,6 @@ html.touch
   min-width 1024px
   -ms-behavior: url("../js/background-size-polyfill/backgroundsize.min.htc");
   overflow hidden
-     
   .outer-wraper
     min-height 600px
     width 100%
@@ -83,6 +82,17 @@ html.touch
           vertical-align top
           padding 32px
           width 608px
+          &>footer
+            padding 16px 0 
+            color #808285 
+            p 
+              font-size 14px
+              line-height 16px
+          &>header
+            .title
+              font-size 24px
+              line-height 32px
+              margin-bottom 16px
           &.current
             display block
           &.plastic-fantasy-calculator
@@ -208,7 +218,7 @@ html.touch
               border-style solid none solid solid
               border-width 6px 0 6px 6px
               
-        footer
+        &>footer
           position absolute
           left 0
           bottom 0
