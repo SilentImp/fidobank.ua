@@ -22,10 +22,34 @@ define [
 
     testInput: (event)=>
       event.preventDefault()
-      $.post(@widget.attr('action'),
+
+      currentForm = $('.calculator-forms form.current')
+      type = currentForm.attr 'data-type'
+      switch type
+        when 'unity-calculator'
+          name = "Депозит «Єдність»"
+          term = currentForm.find('[name="loan_term"]:checked').val()
+          currency = currentForm.find('[name="loan_currency"]:checked').val()
+        when 'double-guarantee-calculator'
+          name = "Депозит «Двойная гарантия»"
+          term = currentForm.find('[name="loan_term"]:checked').val()
+          currency = "USD"
+        when 'plastic-fantasy-calculator'
+          name = "Депозит «Пластик Фантастик»"
+          term = 12
+          currency = "UAH"
+      summ = currentForm.find('.summ').val()
+
+      data = 
         "person": @name.val(),
-        "phone": @tel.val()
-      )
+        "phone": @tel.val(),
+        "name": name,
+        "term": term,
+        "currency": currency,
+        "summ": summ
+
+
+      $.post @widget.attr('action'), data
       @widget[0].reset()
       @widget.find('.message').hide()
       @widget.find('.ready-to-send').hide()
