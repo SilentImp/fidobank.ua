@@ -14,6 +14,9 @@ define [
       if $('html').hasClass 'touch'
         @itype = 'touchstart'
 
+
+      $('header .blocker').on @itype, @saveClick
+
       @scrollController = new ScrollController()
       @visibilityChecked = false
       @mainCalculator = $ '.calculator-forms'
@@ -70,6 +73,15 @@ define [
       $('form:not(.callback-form)').on 'submit', (event)=>
         event.preventDefault()
         @recountForm()
+
+
+    saveClick: (event)=>
+      $(event.currentTarget.parentNode).addClass 'clicked'
+      $(event.currentTarget).fadeOut()
+      try
+        _gaq.push ['_trackEvent', 'Open', 'Success', ' ']
+      catch e
+        console.log e
 
 
     syncDropDowns: (event)=>

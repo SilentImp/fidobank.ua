@@ -13,21 +13,40 @@ body>header
       text-indent -9999px
       float left
     .contacts
+      position relative
       float right
+      width 440px
       color #00316f
       padding 25px 12px 0 0
-      font-size 24px
+      font-size 23px
       font-family 'Plumb Medium', Helvetica, Arial, sans-serif
+      &.clicked
+        a b
+          opacity 1 
       .title
         display inline-block
         vertical-align top
         margin-right 32px
+      .blocker
+        cursor pointer
+        position absolute
+        right 0
+        top 0
+        bottom 0
+        left 0
+        padding 26px 0 0 370px
+        font-size 10px
+        z-index 20
+        background-color rgba(255,255,255,0)
       a
         text-decoration none
         color #808285
         display inline-block
         vertical-align top
         width 160px
+        b
+          opacity 0
+          transition opacity .5s
         span
           font-family 'Plumb Regular', Helvetica, Arial, sans-serif
           display block
