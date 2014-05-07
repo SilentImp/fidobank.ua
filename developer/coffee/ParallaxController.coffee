@@ -40,7 +40,6 @@ define [
       bottom = parseFloat((@max*percents/100)-128,10)
       @percent.css
         'bottom': bottom.toString()+'px'
-      console.log @percent.css('bottom')
 
 
     getPercents: =>
