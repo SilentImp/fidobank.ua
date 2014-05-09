@@ -22,18 +22,12 @@ define [
       @widget.find('button').on 'click', @message20
 
     message7: =>
-      if window.docCookies.getItem('message7') != null
-        return
-      window.docCookies.setItem('message7', true, Infinity)
       try 
         ga('send', 'event', 'Form', 'Book a Call', '#'+@name.val()+' '+@tel.val()+'#')
       catch e
         console.log e
 
     message20: =>
-      if window.docCookies.getItem('message20') != null
-        return
-      window.docCookies.setItem('message20', true, Infinity)
       data = @getData()
       try 
         ga('send', 'event', 'Buttons CTR', 'Book a Call', 'Click')

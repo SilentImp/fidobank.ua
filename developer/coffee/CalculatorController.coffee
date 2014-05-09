@@ -305,9 +305,6 @@ define [
       return [name, term, summ, currency]
 
     message6: =>
-      if window.docCookies.getItem('message6') != null
-        return
-      window.docCookies.setItem('message6', true, Infinity)
       data = @getData()
       try 
         ga('send', 'event', 'Form', 'More', '#'+data[2]+' '+data[3]+' - '+data[1]+' Month#')
@@ -315,9 +312,6 @@ define [
         console.log e
 
     message11: =>
-      if window.docCookies.getItem('message11') != null
-        return
-      window.docCookies.setItem('message11', true, Infinity)
       data = @getData()
       try 
         ga('send', 'event', 'Header', 'More', '#'+data[2]+' '+data[3]+' - '+data[1]+' Month#')
@@ -325,9 +319,6 @@ define [
         console.log e
 
     message15: =>
-      if window.docCookies.getItem('message15') != null
-        return
-      window.docCookies.setItem('message15', true, Infinity)
       data = @getData()
       try 
         ga('send', 'event', 'Buttons CTR', 'More Form', 'Impression')
@@ -335,9 +326,6 @@ define [
         console.log e
 
     message16: =>
-      if window.docCookies.getItem('message16') != null
-        return
-      window.docCookies.setItem('message16', true, Infinity)
       data = @getData()
       try 
         ga('send', 'event', 'Buttons CTR', 'More Form', 'Click')
@@ -345,9 +333,6 @@ define [
         console.log e
 
     message17: =>
-      if window.docCookies.getItem('message17') != null
-        return
-      window.docCookies.setItem('message17', true, Infinity)
       data = @getData()
       try 
         ga('send', 'event', 'Buttons CTR', 'More Header', 'Impression')
@@ -355,9 +340,6 @@ define [
         console.log e
 
     message18: =>
-      if window.docCookies.getItem('message18') != null
-        return
-      window.docCookies.setItem('message18', true, Infinity)
       data = @getData()
       try 
         ga('send', 'event', 'Buttons CTR', 'More Header', 'Click')
@@ -365,9 +347,6 @@ define [
         console.log e
 
     message19: =>
-      if window.docCookies.getItem('message19') != null
-        return
-      window.docCookies.setItem('message19', true, Infinity)
       data = @getData()
       try 
         ga('send', 'event', 'Buttons CTR', 'Book a Call', 'Impression')
@@ -375,9 +354,6 @@ define [
         console.log e
 
     message22: =>
-      if window.docCookies.getItem('message22') != null
-        return
-      window.docCookies.setItem('message22', true, Infinity)
       data = @getData()
       try 
         ga('send', 'event', 'Form', 'Calculator', 'User clicks on calculator button')
@@ -385,9 +361,6 @@ define [
         console.log e
 
     message24: =>
-      if window.docCookies.getItem('message24') != null
-        return
-      window.docCookies.setItem('message24', true, Infinity)
       data = @getData()
       try 
         ga('send', 'event', 'Contact', 'Show Number', 'User clicks on button show number')
